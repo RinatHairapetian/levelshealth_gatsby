@@ -1,0 +1,35 @@
+.global-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background: radial-gradient(100% 62.34% at 0% 37.66%, #FFFFFF 38.02%, #E6E6E6 100%);
+    margin-bottom: 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-wrapper nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header-wrapper nav a {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: right;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.header-wrapper nav a:hover,
+.header-wrapper nav a[aria-current] {
+    border-bottom-color: #54ECCA;
+}
