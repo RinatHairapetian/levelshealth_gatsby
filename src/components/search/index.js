@@ -20,8 +20,8 @@ export default function Search({ indices }) {
   const searchClient = useMemo(
     () =>
       algoliasearch(
-        "C3FM325ISF",
-        "d221d0de48b77e52685d952570d20514"
+        process.env.GATSBY_ALGOLIA_APP_ID || "C3FM325ISF",
+        process.env.GATSBY_ALGOLIA_SEARCH_KEY || "d221d0de48b77e52685d952570d20514"
       ),
     []
   )

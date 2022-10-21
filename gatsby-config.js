@@ -7,9 +7,9 @@
  */
 
 
-// require('dotenv').config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// });
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 require('dotenv').config();
 
@@ -158,10 +158,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: "C3FM325ISF",
+        appId: process.env.GATSBY_ALGOLIA_APP_ID || "C3FM325ISF",
         // Use Admin API key without GATSBY_ prefix, so that the key isn't exposed in the application
         // Tip: use Search API key with GATSBY_ prefix to access the service from within components
-        apiKey: "221b6f535b14c9d19db9452d7b3ebbc5",
+        apiKey: process.env.ALGOLIA_ADMIN_KEY || "221b6f535b14c9d19db9452d7b3ebbc5",
         // indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
         // queries,
         queries: require("./src/utils/algolia-queries"),
