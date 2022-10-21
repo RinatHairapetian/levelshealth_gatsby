@@ -180,5 +180,28 @@ module.exports = {
     },
 
     `gatsby-plugin-styled-components`,
+
+    {
+      resolve: `gatsby-plugin-posthog`,
+      options: {
+        // Specify the API key for your Posthog Project (required)
+        apiKey: process.env.POSTHOG_API_KEY || "phc_r9OHSddErrSkDIKNSdjEhxCvXg1lb7o3VbtlmnCHDJu",
+        // Specify the app host if self-hosting (optional, default: https://app.posthog.com)
+        apiHost: process.env.POSTHOG_HOST_URL || "https://posthog.internal.levelshealth.com",
+        // Puts tracking script in the head instead of the body (optional, default: true)
+        head: true,
+        // Enable posthog analytics tracking during development (optional, default: false)
+        isEnabledDevMode: true
+      },
+    },
+
+    {
+      resolve: "gatsby-plugin-social9-socialshare",
+      options: {
+        async: true,
+        defer: true,
+        content: process.env.SOCIAL9_CONTENT || "1533dc2b1123411b82328f3010cf5b69"
+      },
+    },
   ],
 }

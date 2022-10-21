@@ -8,7 +8,7 @@ import PostMiddle from "./../components/post-middle/post-middle";
 import PostSmall from "./../components/post-small/post-small";
 import Seo from "./../components/seo";
 
-const NotFoundPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const demoPost = data.wpPost;
   const posts = data.allWpPost.nodes;
 
@@ -64,7 +64,7 @@ const NotFoundPage = ({ data }) => {
   )
 }
 
-export default NotFoundPage
+export default HomePage
 
 export const pageQuery = graphql`
   query {
