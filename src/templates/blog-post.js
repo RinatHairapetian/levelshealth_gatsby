@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import parse from "html-react-parser";
+import React, { useEffect } from "react";
 import * as s from "../css/blog-post.module.css";
 
 
@@ -10,13 +10,18 @@ import * as s from "../css/blog-post.module.css";
 // version used by the Gatsby and @wordpress packages that causes build
 // failures.
 // @todo update this once @wordpress upgrades their postcss version
-import "../css/@wordpress/block-library/build-style/style.css"
-import "../css/@wordpress/block-library/build-style/theme.css"
+import "../css/@wordpress/block-library/build-style/style.css";
+import "../css/@wordpress/block-library/build-style/theme.css";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import AlgoliaInitialize, { PostViewed } from '../utils/AlgoliaInitialize';
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
+  useEffect(() => {
+    AlgoliaInitialize();
+    PostViewed([post.id]);
+  }, [post.id])
   const featuredImage = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.altText || ``,
