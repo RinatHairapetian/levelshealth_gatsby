@@ -5,7 +5,6 @@ import * as s from "./fundamentals.module.css";
 import Slider from "react-slick";
 
 const Fundamentals = ({ posts }) => {
-  console.log(posts);
 
   const sliderSettings = {
     dots: false,

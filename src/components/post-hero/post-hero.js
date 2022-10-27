@@ -28,12 +28,20 @@ const PostHero = ({ post }) => {
           }
           <h2 className={s.title}>{parse(post.title)}</h2>
           <div className={s.excerpt}>{parse(post.excerpt)}</div>
-          <h4 className={s.author}>{post.author?.node?.name}</h4>
+          <div className="d-flex justify-content-between align-items-center mb-2">
+            <div className="d-flex align-items-center">
+              {!!post.author?.node?.avatar?.url &&
+                <div className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></div>
+              }
+              <h4 className={s.author}>{post.author?.node?.name}</h4>
+            </div>
+            {!!post.date && <div className={`${s.postDate}`}>{post.date}</div>}
+          </div>
           <div className="d-flex justify-content-between align-items-center flex-wrap">
+            <div className="d-flex align-items-center"> {/* reviewer */} </div>
             {!!post.blogSingle?.readingTime &&
               <div className={`${s.readingTime}`}>{post.blogSingle?.readingTime} read</div>
             }
-            {!!post.date && <div className={`${s.postDate}`}>{post.date}</div>}
           </div>
 
           {/* {!!post.tags?.nodes?.length &&

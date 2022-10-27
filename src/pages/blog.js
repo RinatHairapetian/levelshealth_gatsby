@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 
 import CategoriesBlog from './../components/categories-blog/categories-blog';
@@ -10,10 +10,10 @@ import PostMiddle from "./../components/post-middle/post-middle";
 import PostSmall from "./../components/post-small/post-small";
 import Post from './../components/post/post';
 import Seo from "./../components/seo";
+import UltimateGuides from './../components/ultimate-guides/ultimate-guides';
 
 const BlogPage = ({ data }) => {
   const posts = data.allWpPost.nodes;
-  console.log(data);
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ const BlogPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <Fundamentals posts={posts} />
+      <Fundamentals posts={[...posts]} />
       <div className="container">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
           <div className="col-12 col-xl-9">
@@ -71,7 +71,7 @@ const BlogPage = ({ data }) => {
             </div>
           </div>
           <div className="col-12 col-xl-3">
-            Ultimate guides
+            <UltimateGuides title={'Ultimate Guides'} posts={[...posts]} link={<Link to="/blog/category/ultimate-guides">More Ultimate Guides</Link>} />
           </div>
         </div>
       </div >
@@ -108,6 +108,9 @@ export const pageQuery = graphql`
         uri
         author {
           node {
+            avatar {
+              url
+            }
             name
           }
         }
@@ -141,6 +144,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        date(formatString: "MMM DD, YYYY")
       }
     }
   }

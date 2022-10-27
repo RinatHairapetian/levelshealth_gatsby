@@ -1,4 +1,5 @@
 @media screen and (min-width: 1600px) {
+
     .container,
     .container-lg,
     .container-md,
@@ -131,10 +132,21 @@ img.aligncenter {
 }
 
 /*============SLICK============*/
+
+.slick-track {
+    display: flex;
+    align-items: stretch;
+}
+
+.slick-slider:not(.adaptive-height) .slick-slide {
+    /* float: unset; */
+    height: inherit !important;
+}
+
 .slick-prev:before, .slick-next:before {
     color: #54ECCA;
 }
 
 .slick-arrow.slick-disabled {
-    display: none!important;
+    display: none !important;
 }

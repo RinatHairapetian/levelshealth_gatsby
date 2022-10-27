@@ -1,0 +1,96 @@
+.ultimate-guides {
+    opacity: 1;
+}
+
+.title {
+    background: #222222 0% 0% no-repeat padding-box;
+    opacity: 1;
+
+    text-align: left;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 25px;
+    padding: 14px 24px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.post:not(:last-child) {
+    border-bottom: 1px solid #9EA8A9;
+}
+
+.post .post-title {
+    text-align: left;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin-bottom: 12px;
+    max-height: 84px;
+    overflow: hidden;
+}
+
+.post .avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+}
+
+.post .author {
+    opacity: 1;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #5D6465;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ultimate-guides>a:not(.post) {
+    background: #54ECCA 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    text-align: center;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    color: #05473C;
+    opacity: 1;
+    margin-top: 15px;
+    padding: 15px 0;
+    display: block;
+    text-decoration: none;
+}

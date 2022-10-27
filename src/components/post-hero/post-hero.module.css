@@ -69,36 +69,49 @@
     opacity: 1;
 }
 
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+}
+
 .author {
+    opacity: 1;
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: -0.01em;
-    color: #000000;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #5D6465;
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 0;
 }
 
 .reading-time {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: -0.01em;
-    color: #8D8D8D;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0;
+    color: #5D6465;
 }
 
 .post-date {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: -0.01em;
-    color: #8D8D8D;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #5D6465;
 }
 
 .tags {
