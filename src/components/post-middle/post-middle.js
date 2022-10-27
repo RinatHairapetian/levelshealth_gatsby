@@ -24,6 +24,13 @@ const PostMiddle = ({ post }) => {
             </div>
           }
           <h2 className={s.title}>{parse(post.title)}</h2>
+          <div className={s.excerpt}>{parse(post.excerpt)}</div>
+          <div className="d-flex justify-content-between align-items-center flex-wrap">
+            <div className={s.author}>{post.author?.node?.name}</div>
+            {!!post.blogSingle?.readingTime &&
+              <div className={`${s.readingTime}`}>{post.blogSingle?.readingTime} read</div>
+            }
+          </div>
         </div>
         <div className={s.image} style={imaegStyles}></div>
       </Link>

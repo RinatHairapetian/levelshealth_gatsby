@@ -15,7 +15,7 @@ const PostHero = ({ post }) => {
   return (
     <>
       <Link to={post.uri} itemProp="url" className={`${s.postHero}`}>
-        <div className={s.info}>
+        <div className={`${s.info} col-md-6 col-xl-4 py-3 p-xl-3 ps-xl-0`}>
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
               {/* {post.categories?.nodes?.map((c, i) => {
@@ -27,6 +27,7 @@ const PostHero = ({ post }) => {
             </div>
           }
           <h2 className={s.title}>{parse(post.title)}</h2>
+          <div className={s.excerpt}>{parse(post.excerpt)}</div>
           <h4 className={s.author}>{post.author?.node?.name}</h4>
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             {!!post.blogSingle?.readingTime &&
@@ -44,7 +45,7 @@ const PostHero = ({ post }) => {
           } */}
 
         </div>
-        <div className={s.image} style={imaegStyles}></div>
+        <div className={`${s.image} col-md-6 col-xl-8 py-3 p-xl-3`} style={imaegStyles}></div>
       </Link>
     </>
   );

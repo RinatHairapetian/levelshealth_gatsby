@@ -10,7 +10,7 @@ export default connectSearchBox(
       onClose();
     }
     return (
-      <form className={`${className} container`}>
+      <form className={`${className} ${hasFocus ? 'container' : ''}`}>
         <SearchIcon className="SearchIcon" />
         <input
           className="SearchInput"

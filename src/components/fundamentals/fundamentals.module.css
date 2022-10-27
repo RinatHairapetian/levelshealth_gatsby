@@ -1,0 +1,58 @@
+.fundamentals {
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    opacity: 1;
+    margin: 15px 0;
+    padding: 20px 0 30px;
+}
+
+.title {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin-bottom: 25px;
+}
+
+.fundamentals a {
+    text-decoration: none;
+    text-align: left;
+
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 26px;
+
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    display: flex;
+    gap: 19px;
+    align-items: flex-start;
+    padding-right: 19px;
+}
+
+.fundamentals a span {
+    background: #222222 0% 0% no-repeat padding-box;
+    border-radius: 50%;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    display: inline-flex;
+    width: 49px;
+    min-width: 49px;
+    height: 49px;
+    min-height: 49px;
+    align-items: center;
+    justify-content: center;
+}

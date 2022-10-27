@@ -18,7 +18,7 @@
     aspect-ratio: 1 / 1;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 
@@ -28,7 +28,7 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 110%;
     letter-spacing: -0.02em;
     color: #000000;
@@ -63,6 +63,18 @@
     margin-right: 3px;
     font-size: 20px;
     line-height: 9px;
+}
+
+
+.author {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    letter-spacing: -0.01em;
+    color: #8D8D8D;
 }
 
 

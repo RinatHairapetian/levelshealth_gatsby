@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import React from "react";
 import * as s from "./post-small.module.css";
 
-const PostSmall = ({ post }) => {
+const PostSmall = ({ post, showTypes }) => {
   const image = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.altText || ``,
@@ -28,12 +28,18 @@ const PostSmall = ({ post }) => {
           )}
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
-              {post.types?.nodes?.map((c, i) => {
+              {!showTypes && post.categories?.nodes?.map((c, i) => {
+                return <span key={`cat-${i}`}>{c.name}</span>
+              })}
+              {!!showTypes && post.types?.nodes?.map((c, i) => {
                 return <span key={`cat-${i}`}>{c.name}</span>
               })}
             </div>
           }
           <h3 itemProp="headline">{parse(post.title)}</h3>
+          <div className="d-flex justify-content-between align-items-center flex-wrap">
+            <div className={s.author}>{post.author?.node?.name}</div>
+          </div>
         </Link>
       </article>
     </>

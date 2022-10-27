@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
       <div className="container">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
           {!!demoPost.uri &&
-            <div className="col-12 mt-3" >
+            <div className="col-12 mt-3 py-3 p-xl-4 grid-item" >
               <PostHero post={demoPost} />
             </div>
           }

@@ -2,11 +2,13 @@ import { graphql } from "gatsby";
 import React from "react";
 
 import CategoriesBlog from './../components/categories-blog/categories-blog';
+import Fundamentals from "./../components/fundamentals/fundamentals";
 import HeaderBlog from './../components/header-blog/header-blog';
 import Layout from "./../components/layout";
 import PostHero from './../components/post-hero/post-hero';
 import PostMiddle from "./../components/post-middle/post-middle";
 import PostSmall from "./../components/post-small/post-small";
+import Post from './../components/post/post';
 import Seo from "./../components/seo";
 
 const BlogPage = ({ data }) => {
@@ -20,42 +22,57 @@ const BlogPage = ({ data }) => {
       <CategoriesBlog />
       <div className="container">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
-          
-          {posts.length > 0 &&
-            posts.map((post, index) => {
-              let view = "";
-              switch (index) {
-                case -1:
-                  view = <div className="col-12 py-3 p-0" key={post.uri} >
-                    <PostHero post={post} />
-                  </div>
-                  break;
-                case 0:
-                case 1:
-                  view = <div className="col-6 col-xl-4 py-3 p-xl-4 grid-item" key={post.uri} >
-                    <PostSmall post={post} />
-                  </div>
-                  break;
-                case 2:
-                  view = <div className="d-none d-xl-block col-xl-4 py-3 p-xl-4 grid-item" key={post.uri} >
-                    <PostSmall post={post} />
-                  </div>
-                  break;
-                case 3:
-                  view = <div className="col-12 col-xl-8 py-3 p-xl-4 grid-item" key={post.uri} >
-                    <PostMiddle post={post} />
-                  </div>
-                  break;
-                case 4:
-                default:
-                  view = <div className="d-none d-xl-block col-xl-4 py-3 p-xl-4 grid-item" key={post.uri} >
-                    <PostSmall post={post} />
-                  </div>
-                  break;
+          <div className="col-12 col-xl-9 py-3 p-xl-3 grid-item">
+            <PostHero post={posts[0]} />
+          </div>
+          <div className="col-12 col-xl-3">
+            Sign up
+          </div>
+        </div>
+      </div>
+      <Fundamentals posts={posts} />
+      <div className="container">
+        <div className="row justify-content-center" style={{ rowGap: '15px' }}>
+          <div className="col-12 col-xl-9">
+            <div className="row">
+              {posts.length > 0 &&
+                posts.map((post, index) => {
+                  let view = "";
+                  switch (index) {
+                    case 0:
+                      break;
+                    case 1:
+                      view = <div className="col-12 col-xl-8 py-3 p-xl-3 grid-item" key={post.uri} >
+                        <PostMiddle post={post} showTypes={true} />
+                      </div>
+                      break;
+                    case 2:
+                      view = <div className="col-12 col-xl-4 py-3 p-xl-3 grid-item" key={post.uri} >
+                        <Post post={post} />
+                      </div>
+                      break;
+                    case 3:
+                      view = <div className="col-12 col-xl-8 py-3 p-xl-3 grid-item" key={post.uri} >
+                        <PostMiddle post={post} showTypes={true} />
+                      </div>
+                      break;
+                    case 4:
+                    case 5:
+                      view = <div className="col-md-6 col-xl-2 py-3 p-xl-3 grid-item" key={post.uri} >
+                        <PostSmall post={post} showTypes={true} />
+                      </div>
+                      break;
+                    default:
+                      break;
+                  }
+                  return view;
+                })
               }
-              return view;
-            })
-          }
+            </div>
+          </div>
+          <div className="col-12 col-xl-3">
+            Ultimate guides
+          </div>
         </div>
       </div >
     </Layout >
