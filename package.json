@@ -29,7 +29,7 @@
   "dependencies": {
     "@styled-icons/fa-solid": "^10.46.0",
     "algoliasearch": "^4.14.2",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.24.5",
     "gatsby-plugin-algolia": "^0.26.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-manifest": "^4.0.0",

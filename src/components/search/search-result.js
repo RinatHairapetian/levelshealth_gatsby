@@ -41,7 +41,7 @@ const HitsInIndex = ({ index }) => (
 )
 
 const SearchResult = ({ indices, className }) => (
-  <div className={className}>
+  <div className={`${className} container`}>
     {indices?.length > 0 && indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}

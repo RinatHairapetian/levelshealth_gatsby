@@ -18,12 +18,12 @@ const PostHero = ({ post }) => {
         <div className={s.info}>
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
-              {post.categories?.nodes?.map((c, i) => {
+              {/* {post.categories?.nodes?.map((c, i) => {
                 return <span key={`cat-${i}`}>{c.name}</span>
-              })}
-              {/* {post.types?.nodes?.map((c, i) => {
-                return <span key={`type-${i}`}>{c.name}</span>
               })} */}
+              {post.types?.nodes?.map((c, i) => {
+                return <span key={`type-${i}`}>{c.name}</span>
+              })}
             </div>
           }
           <h2 className={s.title}>{parse(post.title)}</h2>

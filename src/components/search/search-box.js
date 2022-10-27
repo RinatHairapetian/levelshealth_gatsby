@@ -10,7 +10,7 @@ export default connectSearchBox(
       onClose();
     }
     return (
-      <form className={className}>
+      <form className={`${className} container`}>
         <SearchIcon className="SearchIcon" />
         <input
           className="SearchInput"

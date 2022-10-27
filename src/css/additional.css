@@ -46,9 +46,9 @@
     order: 2;
 }
 
-.blog-categories a[aria-current="page"] {
+/* .blog-categories a[aria-current="page"] {
     order: 1;
-}
+} */
 
 .blog-categories a[aria-current="page"],
 .blog-categories a:hover {
@@ -64,6 +64,105 @@
     color: #54ECCA;
 }
 
+
+.blog-categories-wrapper {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 22px;
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+}
+
+.blog-categories-wrapper .blog-categories {
+    margin: 0;
+    gap: 20px;
+}
+
+.blog-categories-wrapper a,
+.blog-categories-wrapper a:hover,
+.blog-categories-wrapper a[aria-current="page"] {
+    background: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 1.8px;
+    color: #05473C;
+    text-transform: uppercase;
+    opacity: 1;
+    padding: 10px 0;
+}
+
+.blog-categories-wrapper .more-button {
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    opacity: 1;
+    align-self: start;
+    border: none;
+    outline: none;
+    text-align: center;
+    font: normal normal 600 18px/22px 'TT Hoves', sans-serif;
+    letter-spacing: 1.8px;
+    color: #05473C;
+    text-transform: uppercase;
+    opacity: 1;
+    padding: 9px 36px 9px 16px;
+    position: relative;
+}
+
+.blog-categories-wrapper .more-button .burger::before,
+.blog-categories-wrapper .more-button .burger,
+.blog-categories-wrapper .more-button .burger::after {
+    display: block;
+    background-color: #05473c;
+    position: absolute;
+    height: 2px;
+    width: 15px;
+    border-radius: 2px;
+}
+.blog-categories-wrapper .more-button .burger {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.blog-categories-wrapper .more-button .burger::before {
+    content: '';
+    margin-top: -4px;
+}
+.blog-categories-wrapper .more-button .burger::after {
+    content: '';
+    margin-top: 4px;
+}
+
+.blog-categories-wrapper .more-categories {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100030;
+    background-color: #9ea8a9;
+    color: white;
+    align-items: center;
+}
+
+.blog-categories-wrapper .more-categories .close {
+    position: sticky;
+    top: 10px;
+    left: calc(100% - 32px);
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.blog-categories-wrapper .more-categories h2 {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    color: #fff;
+    font-size: 3em;
+}
 
 
 /*display_post*/

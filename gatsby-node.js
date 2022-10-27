@@ -24,7 +24,7 @@ exports.createPages = async gatsbyUtilities => {
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
 
   // And a paginated archive
-  await createBlogPostArchive({ posts, gatsbyUtilities })
+  // await createBlogPostArchive({ posts, gatsbyUtilities })
 
 
   // const demoPost = await getDemoPost(gatsbyUtilities)
@@ -245,7 +245,7 @@ async function getPosts({ graphql, reporter }) {
 /**
  * This function creates all the individual categories pages in this site
  */
- async function createPostCategoriesPages({ categories, gatsbyUtilities }) {
+async function createPostCategoriesPages({ categories, gatsbyUtilities }) {
   return Promise.all(
     categories.map((item) => {
       // createPage is an action passed to createPages

@@ -9,22 +9,18 @@ import PostMiddle from "./../components/post-middle/post-middle";
 import PostSmall from "./../components/post-small/post-small";
 import Seo from "./../components/seo";
 
-const HomePage = ({ data }) => {
-  const demoPost = data.wpPost;
+const BlogPage = ({ data }) => {
   const posts = data.allWpPost.nodes;
+  console.log(data);
 
   return (
     <Layout>
-      <Seo title="Home page" />
+      <Seo title="Blog page" />
       <HeaderBlog />
       <CategoriesBlog />
       <div className="container">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
-          {!!demoPost.uri &&
-            <div className="col-12 mt-3" >
-              <PostHero post={demoPost} />
-            </div>
-          }
+          
           {posts.length > 0 &&
             posts.map((post, index) => {
               let view = "";
@@ -66,7 +62,7 @@ const HomePage = ({ data }) => {
   )
 }
 
-export default HomePage
+export default BlogPage
 
 export const pageQuery = graphql`
   query {
@@ -75,47 +71,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    wpPost(slug: { eq: "the-ultimate-guide-to-metabolic-health" }) {
-      uri
-      author {
-        node {
-          name
-        }
+    allWpPage {
+      nodes {
+          title
+          slug
       }
-      blogSingle {
-        readingTime
-      }
-      title
-      excerpt
-      categories {
-        nodes {
-          name
-        }
-      }
-      types {
-        nodes {
-          name
-        }
-      }
-      tags {
-        nodes {
-          name
-        }
-      }
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
+      edges {
+          node {
+          title
+          slug
           }
-        }
       }
     }
     allWpPost(
       sort: { fields: [date], order: DESC }
-      limit: 5
+      limit: 6
     ) {
       nodes {
         uri

@@ -13,9 +13,10 @@ import * as s from "../css/blog-post.module.css";
 import "../css/@wordpress/block-library/build-style/style.css";
 import "../css/@wordpress/block-library/build-style/theme.css";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
 import AlgoliaInitialize, { PostViewed } from '../utils/AlgoliaInitialize';
+import HeaderBlog from './../components/header-blog/header-blog';
+import Layout from "./../components/layout";
+import Seo from "./../components/seo";
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
   return (
     <Layout>
+      <HeaderBlog />
       <Seo title={post.title} description={post.excerpt} />
       <article
         className="blog-post"

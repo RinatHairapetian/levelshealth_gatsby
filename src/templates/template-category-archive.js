@@ -1,7 +1,8 @@
 import { graphql } from "gatsby"
 import React from "react"
 
-import Categories from "./../components/categories/categories"
+import CategoriesBlog from './../components/categories-blog/categories-blog'
+import HeaderBlog from './../components/header-blog/header-blog'
 import Layout from "./../components/layout"
 import PostHeroCategory from './../components/post-hero-category/post-hero-category'
 import Post from "./../components/post/post"
@@ -53,7 +54,9 @@ const CategoryArchive = ({ data }) => {
         description={''}
         pageSeo={category}
       />
-      <Categories />
+      <HeaderBlog />
+      <CategoriesBlog />
+
       <div className="container">
         <div className="row">
           <div className="col-12">

@@ -1,0 +1,40 @@
+nav {
+  height: 100%;
+}
+nav > .menu-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.menu-item a {
+  /* font-family: "Poppins", "sans-serif";
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  display: inline-block;
+  user-select: none;
+  text-decoration: none;
+  color: #232323;
+  opacity: 0.76;
+  line-height: 150%;
+  font-size: 20px; */
+
+  font-family: 'TT Hoves', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: right;
+  text-transform: capitalize;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.menu-item nav a:hover,
+.menu-item a[aria-current] {
+    border-bottom-color: #54ECCA;
+}
