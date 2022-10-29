@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import React from "react";
 import * as s from "./post-hero-category.module.css";
 
-const PostHeroCategory = ({ post }) => {
+const PostHeroCategory = ({ post, showTypes }) => {
   
 
   const image = {
@@ -20,7 +20,10 @@ const PostHeroCategory = ({ post }) => {
         <div className={s.info}>
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
-              {post.categories?.nodes?.map((c, i) => {
+              {!showTypes && post.categories?.nodes?.map((c, i) => {
+                return <span key={`cat-${i}`}>{c.name}</span>
+              })}
+               {!!showTypes && post.types?.nodes?.map((c, i) => {
                 return <span key={`cat-${i}`}>{c.name}</span>
               })}
             </div>

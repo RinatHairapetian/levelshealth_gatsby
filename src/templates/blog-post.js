@@ -28,7 +28,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     alt: post.featuredImage?.node?.altText || ``,
   }
 
-  console.log(post);
 
   let thumbStyle = {};
   if (!!featuredImage.data) {

@@ -1,6 +1,7 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 
+import BlogSignup from './../components/blog-signup/blog-signup';
 import CategoriesBlog from './../components/categories-blog/categories-blog';
 import Fundamentals from "./../components/fundamentals/fundamentals";
 import HeaderBlog from './../components/header-blog/header-blog';
@@ -9,12 +10,12 @@ import PostHero from './../components/post-hero/post-hero';
 import PostMiddle from "./../components/post-middle/post-middle";
 import PostSmall from "./../components/post-small/post-small";
 import Post from './../components/post/post';
+import SelectedCategory from "./../components/selected-category/selected-category";
 import Seo from "./../components/seo";
 import UltimateGuides from './../components/ultimate-guides/ultimate-guides';
 
 const BlogPage = ({ data }) => {
   const posts = data.allWpPost.nodes;
-
   return (
     <Layout>
       <Seo title="Blog page" />
@@ -22,11 +23,11 @@ const BlogPage = ({ data }) => {
       <CategoriesBlog />
       <div className="container">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
-          <div className="col-12 col-xl-9 py-3 p-xl-3 grid-item">
+          <div className="col-12 col-xl-8 col-xxl-9 py-3 p-xl-3 grid-item">
             <PostHero post={posts[0]} />
           </div>
-          <div className="col-12 col-xl-3">
-            Sign up
+          <div className="col-12 col-xl-4 col-xxl-3 d-none d-xl-block">
+            <BlogSignup />
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@ const BlogPage = ({ data }) => {
                       break;
                     case 1:
                       view = <div className="col-12 col-xl-8 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <PostMiddle post={post} showTypes={true} />
+                        <PostMiddle post={post} />
                       </div>
                       break;
                     case 2:
@@ -53,13 +54,13 @@ const BlogPage = ({ data }) => {
                       break;
                     case 3:
                       view = <div className="col-12 col-xl-8 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <PostMiddle post={post} showTypes={true} />
+                        <PostMiddle post={post} />
                       </div>
                       break;
                     case 4:
                     case 5:
                       view = <div className="col-md-6 col-xl-2 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <PostSmall post={post} showTypes={true} />
+                        <PostSmall post={post} />
                       </div>
                       break;
                     default:
@@ -75,6 +76,11 @@ const BlogPage = ({ data }) => {
           </div>
         </div>
       </div >
+      {data.selectedCategories?.nodes?.length > 0 &&
+        data.selectedCategories?.nodes?.map((category) => {
+          return <SelectedCategory category={category} key={category.uri} />
+        })
+      }
     </Layout >
   )
 }
@@ -147,5 +153,59 @@ export const pageQuery = graphql`
         date(formatString: "MMM DD, YYYY")
       }
     }
+
+    selectedCategories: allWpCategory (
+      filter: {slug: {in: ["weight-loss", "mental-health", "nutrition", "metabolic-basics"]}}
+    ) {
+      nodes {
+        uri
+        name
+        posts {
+          nodes {
+            uri
+            author {
+              node {
+                avatar {
+                  url
+                }
+                name
+              }
+            }
+            blogSingle {
+              readingTime
+            }
+            title
+            excerpt
+            categories {
+              nodes {
+                name
+              }
+            }
+            types {
+              nodes {
+                name
+              }
+            }
+            tags {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+            date(formatString: "MMM DD, YYYY")
+          }
+        }
+      }
+    }
+
   }
 `

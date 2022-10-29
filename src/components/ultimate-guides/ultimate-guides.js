@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import parse from "html-react-parser";
 import React from "react";
 import * as s from "./ultimate-guides.module.css";
-import Slider from "react-slick";
 
 const UltimateGuides = ({ title, posts, link }) => {
   let firstPosts = [];

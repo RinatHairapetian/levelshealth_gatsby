@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import React from "react";
 import * as s from "./post-middle.module.css";
 
-const PostMiddle = ({ post }) => {
+const PostMiddle = ({ post, showTypes }) => {
   const image = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.altText || ``,
@@ -18,8 +18,11 @@ const PostMiddle = ({ post }) => {
         <div className={s.info}>
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
-              {post.categories?.nodes?.map((c, i) => {
+              {!showTypes && post.categories?.nodes?.map((c, i) => {
                 return <span key={`cat-${i}`}>{c.name}</span>
+              })}
+              {!!showTypes && post.types?.nodes?.map((c, i) => {
+                return <span key={`type-${i}`}>{c.name}</span>
               })}
             </div>
           }

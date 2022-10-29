@@ -1,0 +1,92 @@
+.sign-up-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+.sign-up {
+    background: #05473C 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    padding: 24px 36px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+
+    text-align: left;
+
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 55px;
+
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.form {
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.input {
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #5D6465;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.input::placeholder {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #5D6465;
+}
+
+.button {
+    background: #54ECCA 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    text-align: center;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    color: #05473C !important;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.button:hover {
+    background: #26e7bc;
+}

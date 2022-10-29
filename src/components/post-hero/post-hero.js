@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import React from "react";
 import * as s from "./post-hero.module.css";
 
-const PostHero = ({ post }) => {
+const PostHero = ({ post, showTypes }) => {
   const image = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.altText || ``,
@@ -15,13 +15,13 @@ const PostHero = ({ post }) => {
   return (
     <>
       <Link to={post.uri} itemProp="url" className={`${s.postHero}`}>
-        <div className={`${s.info} col-md-6 col-xl-4 py-3 p-xl-3 ps-xl-0`}>
+        <div className={`${s.info} col-md-6 col-xl-4 py-3 p-lg-3 ps-lg-0`}>
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
-              {/* {post.categories?.nodes?.map((c, i) => {
+              {!showTypes && post.categories?.nodes?.map((c, i) => {
                 return <span key={`cat-${i}`}>{c.name}</span>
-              })} */}
-              {post.types?.nodes?.map((c, i) => {
+              })}
+              {!!showTypes && post.types?.nodes?.map((c, i) => {
                 return <span key={`type-${i}`}>{c.name}</span>
               })}
             </div>

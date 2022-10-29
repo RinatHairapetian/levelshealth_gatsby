@@ -21,8 +21,33 @@
     /* border-radius: 8px; */
 }
 
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 30px;
+}
 
+.categories span {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #000000;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
 
+.categories span:not(:first-child)::before {
+    content: "\00B7";
+    margin-right: 3px;
+    font-size: 20px;
+    line-height: 9px;
+}
 
 .post-item .post-title h3 {
     font-family: 'TT Hoves', sans-serif;

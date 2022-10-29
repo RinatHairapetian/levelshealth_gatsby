@@ -72,10 +72,16 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
+        // url: `https://levelsdev.wpengine.com/graphql`,
         url:
           process.env.WPGRAPHQL_URL ||
           `https://www.levelshealth.com/graphql`,
-        // 'http://139.144.44.41/graphql',
+        auth: {
+          htaccess: {
+            username: `levelsdev`,
+            password: `kaptiv8`,
+          },
+        },
         schema: {
           timeout: 3600000,
         },

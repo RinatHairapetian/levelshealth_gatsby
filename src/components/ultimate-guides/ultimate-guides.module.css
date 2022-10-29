@@ -94,3 +94,7 @@
     display: block;
     text-decoration: none;
 }
+
+.ultimate-guides>a:not(.post):hover {
+    background: #26e7bc;
+}
