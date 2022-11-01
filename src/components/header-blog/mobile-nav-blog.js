@@ -11,7 +11,7 @@ var styles = {
     width: "30px",
     height: "24px",
     right: "36px",
-    top: "44px",
+    top: "16px",
   },
   bmBurgerBars: {
     background: "#000",

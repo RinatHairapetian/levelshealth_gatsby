@@ -21,7 +21,7 @@ export default connectSearchBox(
           value={currentRefinement}
           onFocus={onFocus}
         />
-        <button type="button" className={`btn btn-dark ${hasFocus ? 'd-block' : 'd-none'}`}
+        <button type="button" className={`btn btn-dark ${hasFocus ? 'd-block' : 'd-none'}`} style={{ order: 3 }}
           onClick={closeAndClear}>&times;</button>
       </form>
     )

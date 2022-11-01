@@ -5,7 +5,7 @@
 }
 .global-header > div:first-child {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
+    padding: 14px 0;
 }
 
 .header-wrapper {
@@ -17,17 +17,12 @@
 .header-links-wrapper {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .header-links-wrapper > span {
-    border: 1px solid #222222;
-    opacity: 1;
-    height: 40px;
-}
-
-.header-link-home:hover svg > * {
-    fill: #05473C;
+    color: #000;
+    font: 200 35.2px/1 'TT Hoves', sans-serif;
 }
 
 .header-link-blog {
@@ -71,4 +66,10 @@
 .header-wrapper nav a:hover,
 .header-wrapper nav a[aria-current] {
     border-bottom-color: #54ECCA;
+}
+
+@media screen and (max-width: 991.9px) {
+    .global-header > div:first-child {
+        padding: 14px calc(var(--bs-gutter-x) * .5);
+    }
 }

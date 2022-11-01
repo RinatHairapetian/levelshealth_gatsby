@@ -46,7 +46,7 @@ const Fundamentals = ({ posts }) => {
   };
   return (
     <div className={`${s.fundamentals}`}>
-      <div className="container">
+      <div className="container px-lg-0">
         <h2 className={`${s.title}`}>Metabolic Fundamentals: Start Here</h2>
 
         <Slider {...sliderSettings} >

@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import React from "react";
 import * as s from "./post.module.css";
 
-const Post = ({ post, showTypes }) => {
+const Post = ({ post, showTypes, className }) => {
   const image = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.altText || ``,
@@ -12,7 +12,7 @@ const Post = ({ post, showTypes }) => {
   return (
     <>
       <article
-        className={`${s.postItem}`}
+        className={`${s.postItem}  ${className ? className : ''}`}
         itemScope
         itemType="http://schema.org/Article"
       >

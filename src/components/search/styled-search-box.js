@@ -23,10 +23,10 @@ export default styled(SearchBox)`
   align-items: center;
   justify-content: ${({ hasFocus }) => (hasFocus ? 'flex-start' : 'space-between')};
   margin-bottom: 0;
-  background: ${({ hasFocus }) => (hasFocus ? 'white' : 'rgba(0, 0, 0, 0.03)')};
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: ${({ hasFocus }) => (hasFocus ? 'white' : 'transparent')};
+  border: ${({ hasFocus }) => (hasFocus ? '1px solid rgba(0, 0, 0, 0.2)' : 'none')};
   border-radius: 8px;
-  padding: ${({ hasFocus }) => (hasFocus ? '12px' : '0 12px')};
+  padding: ${({ hasFocus }) => (hasFocus ? '12px' : '0')};
 
   .SearchInput {
     outline: none;
@@ -41,7 +41,9 @@ export default styled(SearchBox)`
     line-height: 100%;
     letter-spacing: -0.02em;
     color: #5D6465;
-    padding: ${({ hasFocus }) => (hasFocus ? '2px 1px' : '12px 0')};
+    padding: ${({ hasFocus }) => (hasFocus ? '2px 1px' : '0 0')};
+    border-bottom: ${({ hasFocus }) => (hasFocus ? 'none' : '1px solid #d1d6d6')};
+    order: ${({ hasFocus }) => (hasFocus ? '2' : '1')};
 
     ${({ hasFocus }) => (hasFocus ? 'flex-grow: 1;' : '')};
 
@@ -63,5 +65,6 @@ export default styled(SearchBox)`
     margin: 0 0.3em 0 0;
     color: ${({ theme }) => theme.foreground};
     pointer-events: none;
+    order: ${({ hasFocus }) => (hasFocus ? '1' : '2')};
   }
 `

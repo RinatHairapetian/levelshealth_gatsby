@@ -2,7 +2,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 15px 0;
+    /* padding: 15px 0; */
 }
 .sign-up {
     background: #05473C 0% 0% no-repeat padding-box;
@@ -12,6 +12,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+}
+
+.sign-up .logo {
+    position: absolute;
+    top: 24px;
+    right: 36px;
 }
 
 .title {
@@ -20,9 +27,9 @@
 
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 50px;
-    line-height: 55px;
+    font-weight: 400;
+    font-size: 42.24px;
+    line-height: 47.52px;
 
     letter-spacing: 0px;
     color: #FFFFFF;

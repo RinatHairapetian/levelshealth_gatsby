@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import React from "react";
 import * as s from "./post-middle.module.css";
 
-const PostMiddle = ({ post, showTypes }) => {
+const PostMiddle = ({ post, showTypes, className }) => {
   const image = {
     data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.altText || ``,
@@ -14,7 +14,7 @@ const PostMiddle = ({ post, showTypes }) => {
   }
   return (
     <>
-      <Link to={post.uri} itemProp="url" className={`${s.postHero}`}>
+      <Link to={post.uri} itemProp="url" className={`${s.postHero} ${className ? className : ''}`}>
         <div className={s.info}>
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>

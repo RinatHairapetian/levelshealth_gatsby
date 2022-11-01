@@ -1,7 +1,7 @@
 .fundamentals {
     background: #F5F5F5 0% 0% no-repeat padding-box;
     opacity: 1;
-    margin: 15px 0;
+    margin: 26px 0;
     padding: 20px 0 30px;
 }
 
@@ -35,10 +35,11 @@
     gap: 19px;
     align-items: flex-start;
     padding-right: 19px;
+    max-height: 52px;
 }
 
 .fundamentals a span {
-    background: #222222 0% 0% no-repeat padding-box;
+    background: #9ea8a9 0% 0% no-repeat padding-box;
     border-radius: 50%;
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;

@@ -1,7 +1,6 @@
 .title {
-    background: #222222 0% 0% no-repeat padding-box;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    background-color: #373737;
+    padding: 9px 18px;
 }
 
 .title h2 {

@@ -21,10 +21,10 @@ const BlogPage = ({ data }) => {
       <Seo title="Blog page" />
       <HeaderBlog />
       <CategoriesBlog />
-      <div className="container">
+      <div className="container px-lg-0">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
-          <div className="col-12 col-xl-8 col-xxl-9 py-3 p-xl-3 grid-item">
-            <PostHero post={posts[0]} />
+          <div className="col-12 col-xl-8 col-xxl-9">
+            <PostHero post={posts[0]} className="lr-xl" />
           </div>
           <div className="col-12 col-xl-4 col-xxl-3 d-none d-xl-block">
             <BlogSignup />
@@ -32,7 +32,7 @@ const BlogPage = ({ data }) => {
         </div>
       </div>
       <Fundamentals posts={[...posts]} />
-      <div className="container">
+      <div className="container px-lg-0">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
           <div className="col-12 col-xl-9">
             <div className="row">
@@ -43,24 +43,28 @@ const BlogPage = ({ data }) => {
                     case 0:
                       break;
                     case 1:
-                      view = <div className="col-12 col-xl-8 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <PostMiddle post={post} />
+                      view = <div className="col-12 col-xl-8 py-3" key={post.uri} >
+                        <PostMiddle post={post} className="lr-xl lb" />
                       </div>
                       break;
                     case 2:
-                      view = <div className="col-12 col-xl-4 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <Post post={post} />
+                      view = <div className="col-12 col-xl-4 py-3" key={post.uri} >
+                        <Post post={post} className="lr-xl lb" />
                       </div>
                       break;
                     case 3:
-                      view = <div className="col-12 col-xl-8 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <PostMiddle post={post} />
+                      view = <div className="col-12 col-xl-8 py-3" key={post.uri} >
+                        <PostMiddle post={post} className="lr-xl lb lb-xl-none" />
                       </div>
                       break;
                     case 4:
+                      view = <div className="col-md-6 col-xl-2 py-3" key={post.uri} >
+                        <PostSmall post={post} className="lr-md lb lb-md-none" />
+                      </div>
+                      break;
                     case 5:
-                      view = <div className="col-md-6 col-xl-2 py-3 p-xl-3 grid-item" key={post.uri} >
-                        <PostSmall post={post} />
+                      view = <div className="col-md-6 col-xl-2 py-3" key={post.uri} >
+                        <PostSmall post={post} className="lr-xl" />
                       </div>
                       break;
                     default:

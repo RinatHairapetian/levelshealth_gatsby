@@ -4,7 +4,8 @@
     border-radius: 10px; */
     display: flex;
     /* min-height: 540px; */
-    overflow: hidden;
+    /* overflow: hidden; */
+    height: 100%;
     text-decoration: none;
 }
 
@@ -14,14 +15,14 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .categories {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
 }
 
 .categories span {
@@ -48,14 +49,34 @@
 .title {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
+    font-weight: 300;
+    font-size: 35.2px;
+    line-height: 39.6px;
+    letter-spacing: 0;
     color: #000000;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 19px;
 }
+
+/* .title {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 90%, red 0);
+    background-image: linear-gradient(transparent 90%, #d1d6d6 0px) !important;
+    background-repeat: no-repeat;
+    transition: .4s ease;
+    background-size: 0 100%;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    word-wrap: break-word;
+    text-decoration: none;
+    line-height: 1.125 !important;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.title:hover {
+    background-size: 100% 100%;
+} */
 
 .excerpt {
     text-align: left;

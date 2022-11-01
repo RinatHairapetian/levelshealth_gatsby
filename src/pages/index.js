@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
       <div className="container">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
           {!!demoPost.uri &&
-            <div className="col-12 mt-3 py-3 p-xl-4 grid-item" >
+            <div className="col-12 mt-3 py-3 p-xl-4" >
               <PostHero post={demoPost} />
             </div>
           }
@@ -36,23 +36,23 @@ const HomePage = ({ data }) => {
                   break;
                 case 0:
                 case 1:
-                  view = <div className="col-6 col-xl-4 py-3 p-xl-4 grid-item" key={post.uri} >
+                  view = <div className="col-6 col-xl-4 py-3 p-xl-4" key={post.uri} >
                     <PostSmall post={post} />
                   </div>
                   break;
                 case 2:
-                  view = <div className="d-none d-xl-block col-xl-4 py-3 p-xl-4 grid-item" key={post.uri} >
+                  view = <div className="d-none d-xl-block col-xl-4 py-3 p-xl-4" key={post.uri} >
                     <PostSmall post={post} />
                   </div>
                   break;
                 case 3:
-                  view = <div className="col-12 col-xl-8 py-3 p-xl-4 grid-item" key={post.uri} >
+                  view = <div className="col-12 col-xl-8 py-3 p-xl-4" key={post.uri} >
                     <PostMiddle post={post} />
                   </div>
                   break;
                 case 4:
                 default:
-                  view = <div className="d-none d-xl-block col-xl-4 py-3 p-xl-4 grid-item" key={post.uri} >
+                  view = <div className="d-none d-xl-block col-xl-4 py-3 p-xl-4" key={post.uri} >
                     <PostSmall post={post} />
                   </div>
                   break;

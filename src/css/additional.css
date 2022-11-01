@@ -6,7 +6,7 @@
     .container-sm,
     .container-xl,
     .container-xxl {
-        min-width: 1500px;
+        min-width: 1400px;
     }
 }
 
@@ -127,9 +127,106 @@ img.aligncenter {
 }
 
 
-.grid-item:hover {
-    background-color: #F5F5F5;
+.lr, .lb {
+    position: relative;
 }
+
+.lr::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: calc(var(--bs-gutter-x) * .5 * -1);
+    border-right: 1px solid #d1d6d6;
+}
+
+.lb::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -1rem;
+    border-bottom: 1px solid #d1d6d6;
+}
+
+.lr-lg, .lr-md, .lr-sm, .lr-xl, .lr-xxl,
+.lb-lg, .lb-md, .lb-sm, .lb-xl, .lb-xxl {
+    position: relative;
+}
+
+.lr-lg::before, .lr-md::before, .lr-sm::before, .lr-xl::before, .lr-xxl::before {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: calc(var(--bs-gutter-x) * .5 * -1);
+    border-right: 1px solid #d1d6d6;
+}
+
+.lb-lg::after, .lb-md::after, .lb-sm::after, .lb-xl::after, .lb-xxl::after {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -1rem;
+    border-bottom: 1px solid #d1d6d6;
+}
+
+@media (min-width: 576px) {
+
+    .lr-sm-none::before,
+    .lb-sm-none::after {
+        content: unset;
+    }
+
+    .lr-sm::before,
+    .lb-sm::after {
+        content: "";
+    }
+}
+
+@media (min-width: 768px) {
+
+    .lr-md-none::before, .lb-md-none::after {
+        content: unset;
+    }
+
+    .lr-md::before, .lb-md::after {
+        content: "";
+    }
+}
+
+@media (min-width: 992px) {
+
+    .lr-lg-none::before, .lb-lg-none::after {
+        content: unset;
+    }
+
+    .lr-lg::before, .lb-lg::after {
+        content: "";
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .lr-xl-none::before, .lb-xl-none::after {
+        content: unset;
+    }
+
+    .lr-xl::before, .lb-xl::after {
+        content: "";
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .lr-xxl-none::before, .lb-xxl-none::after {
+        content: unset;
+    }
+
+    .lr-xxl::before, .lb-xxl::after {
+        content: "";
+    }
+}
+
 
 /*============SLICK============*/
 

@@ -68,45 +68,58 @@
 
 .blog-categories-wrapper {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    margin-top: 22px;
-    margin-bottom: 22px;
-    padding-bottom: 15px;
+    margin-top: 14px;
+    margin-bottom: 26px;
+    padding: 0 0 14px 0 !important;
 }
 
 .blog-categories-wrapper .blog-categories {
     margin: 0;
-    gap: 20px;
+    padding: 0;
+    gap: 35px;
 }
 
 .blog-categories-wrapper a,
 .blog-categories-wrapper a:hover,
 .blog-categories-wrapper a[aria-current="page"] {
     background: transparent;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
+    /* font-weight: 600; */
+    /* font-size: 18px; */
+    /* line-height: 22px; */
     text-align: center;
-    letter-spacing: 1.8px;
-    color: #05473C;
+    /* letter-spacing: 1.8px; */
+    /* color: #05473C; */
+    /* text-transform: uppercase; */
+    /* opacity: 1; */
+    padding: 0;
+
+    text-decoration: none !important;
     text-transform: uppercase;
-    opacity: 1;
-    padding: 10px 0;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 19.5px;
+    color: #05473c;
+    font-weight: 600 !important;
 }
 
 .blog-categories-wrapper .more-button {
     background: #F5F5F5 0% 0% no-repeat padding-box;
-    opacity: 1;
     align-self: start;
     border: none;
     outline: none;
-    text-align: center;
-    font: normal normal 600 18px/22px 'TT Hoves', sans-serif;
-    letter-spacing: 1.8px;
-    color: #05473C;
-    text-transform: uppercase;
-    opacity: 1;
-    padding: 9px 36px 9px 16px;
+    font-family: 'TT Hoves', sans-serif;
     position: relative;
+
+    background-color: #e6e6e6;
+    padding: 5px;
+    padding-right: 25px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #05473c;
+    font-weight: 600 !important;
 }
 
 .blog-categories-wrapper .more-button .burger::before,
@@ -121,7 +134,7 @@
 }
 
 .blog-categories-wrapper .more-button .burger {
-    right: 15px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -165,6 +178,17 @@
     font-style: normal;
     color: #fff;
     font-size: 3em;
+}
+
+@media screen and (max-width: 991.9px) {
+    .global-header > div:first-child {
+        padding: 14px calc(var(--bs-gutter-x) * .5);
+    }
+    .blog-categories-wrapper {
+        padding-left: calc(var(--bs-gutter-x) * .5) !important;
+        padding-right: calc(var(--bs-gutter-x) * .5) !important;
+    }
+    
 }
 
 /*===========END BLOG CATEGORIES====================*/
