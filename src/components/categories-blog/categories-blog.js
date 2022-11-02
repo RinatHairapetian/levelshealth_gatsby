@@ -33,6 +33,7 @@ const CategoriesBlog = ({ mainCategories }) => {
       'physical-fitness',
       'weight-loss',
       'ultimate-guides',
+      'womens-health',
     ];
   }
 

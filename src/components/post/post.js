@@ -36,7 +36,7 @@ const Post = ({ post, showTypes, className }) => {
               })}
             </div>
           }
-          <h3 itemProp="headline">{parse(post.title)}</h3>
+          <div className={s.titleWrap}><h3 itemProp="headline" className="title" title={parse(post.title)}>{parse(post.title)}</h3></div>
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             <div className={s.author}>{post.author?.node?.name}</div>
             {!!post.blogSingle?.readingTime &&

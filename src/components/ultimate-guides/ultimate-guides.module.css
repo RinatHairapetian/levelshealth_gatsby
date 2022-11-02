@@ -37,6 +37,12 @@
     border-bottom: 1px solid #9EA8A9;
 }
 
+.post .title-wrap {
+    margin-bottom: 12px;
+    max-height: 86px;
+    overflow: hidden;
+}
+
 .post .post-title {
     text-align: left;
     font-family: 'TT Hoves', sans-serif;
@@ -47,9 +53,6 @@
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
-    margin-bottom: 12px;
-    max-height: 84px;
-    overflow: hidden;
 }
 
 .post .avatar {

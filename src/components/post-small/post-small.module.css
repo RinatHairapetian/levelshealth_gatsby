@@ -22,18 +22,19 @@
 }
 
 
-
+.post-item .post-title .title-wrap {
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
 
 .post-item .post-title h3 {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 110%;
+    font-weight: 300;
+    font-size: 28.16px;
+    line-height: 112.5%;
     letter-spacing: -0.02em;
-    color: #000000;
-    margin-bottom: 15px;
-    flex-grow: 1;
+    color: #373737;
 }
 
 
@@ -42,6 +43,7 @@
     flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 30px;
+    min-height: 28px;
 }
 
 .categories span {

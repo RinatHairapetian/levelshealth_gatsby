@@ -11,7 +11,7 @@ const chunk = require(`lodash/chunk`)
 
 const CategoryArchive = ({ data }) => {
   const category = data.wpCategory;
-  const postsPerPage = 9;
+  const postsPerPage = 8;
 
   let posts = [];
   if (data?.allWpPost?.nodes?.length) {
@@ -85,7 +85,7 @@ const CategoryArchive = ({ data }) => {
           {showingPosts?.length > 0 &&
             <>
               {showingPosts.map((post) => {
-                return <div className={`post-hover col-12 col-md-6 col-xl-4 py-3`} key={post.uri} >
+                return <div className={`post-hover col-12 col-md-6 col-xl-3 py-3`} key={post.uri} >
                   <Post post={post} />
                 </div>
               })}

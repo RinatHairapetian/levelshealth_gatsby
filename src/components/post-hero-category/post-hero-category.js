@@ -28,7 +28,7 @@ const PostHeroCategory = ({ post, showTypes }) => {
               })}
             </div>
           }
-          <h2 className={s.title}>{parse(post.title)}</h2>
+          <div className={s.titleWrap}><h2 className={`${s.title} title`} title={parse(post.title)}>{parse(post.title)}</h2></div>
           <h4 className={s.author}>{post.author?.node?.name}</h4>
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             {!!post.blogSingle?.readingTime &&

@@ -46,6 +46,10 @@
     line-height: 9px;
 }
 
+.title-wrap {
+    margin-bottom: 19px;
+}
+
 .title {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
@@ -53,7 +57,7 @@
     font-size: 35.2px;
     line-height: 39.6px;
     letter-spacing: 0;
-    color: #000000;
+    color: #373737;
     margin-top: 0;
     margin-bottom: 19px;
 }

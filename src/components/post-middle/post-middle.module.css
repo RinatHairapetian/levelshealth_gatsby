@@ -45,16 +45,19 @@
     line-height: 9px;
 }
 
+.title-wrap {
+    margin-bottom: 12px;
+}
+
 .title {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    color: #000000;
+    font-weight: 300;
+    font-size: 35.2px;
+    line-height: 112.5%;
+    color: #373737;
     margin-top: 0;
-    margin-bottom: 12;
+    margin-bottom: 12px;
 }
 
 .excerpt {

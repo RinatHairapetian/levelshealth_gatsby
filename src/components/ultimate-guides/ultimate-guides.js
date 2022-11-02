@@ -6,7 +6,7 @@ import * as s from "./ultimate-guides.module.css";
 const UltimateGuides = ({ title, posts, link }) => {
   let firstPosts = [];
   if (posts?.length) {
-    firstPosts = posts.slice(0, 4);
+    firstPosts = posts.slice(0, 5);
   }
   return (
     <div className={`${s.ultimateGuides} py-3`}>
@@ -16,7 +16,7 @@ const UltimateGuides = ({ title, posts, link }) => {
           firstPosts.map((post, i) =>
             <Link to={post.uri} key={post.uri} className={`${s.post}`}>
               <span>
-                <h4 className={`${s.postTitle}`}>{parse(post.title)}</h4>
+                <div className={s.titleWrap}><h4 className={`${s.postTitle} title`} title={parse(post.title)}>{parse(post.title)}</h4></div>
                 <h6 className={s.author}>{post.author?.node?.name}</h6>
               </span>
               {!!post.author?.node?.avatar?.url &&

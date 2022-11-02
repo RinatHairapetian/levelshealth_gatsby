@@ -27,7 +27,7 @@ const PostHero = ({ post, showTypes, className }) => {
                 })}
               </div>
             }
-            <h2 className={s.title}>{parse(post.title)}</h2>
+            <div className={s.titleWrap}><h2 className={`title ${s.title}`} title={parse(post.title)}>{parse(post.title)}</h2></div>
             <div className={s.excerpt}>{parse(post.excerpt)}</div>
           </div>
           <div>
