@@ -52,7 +52,7 @@ const Fundamentals = ({ posts }) => {
         <Slider {...sliderSettings} >
           {(posts?.length > 0) &&
             posts.map((post, i) =>
-              <div key={post.uri}><Link to={post.uri}><span>{i + 1}</span>{parse(post.title)}</Link></div>
+              <div key={post.uri}><Link to={post.uri} title={parse(post.title)}><span>{i + 1}</span>{parse(post.title)}</Link></div>
             )
           }
         </Slider>

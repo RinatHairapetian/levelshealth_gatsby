@@ -27,7 +27,9 @@ const PostMiddle = ({ post, showTypes, className }) => {
             </div>
           }
           <div className={s.titleWrap}><h2 className={`title ${s.title}`} title={parse(post.title)}>{parse(post.title)}</h2></div>
-          <div className={s.excerpt}>{parse(post.excerpt)}</div>
+          {!!post.seo?.metaDesc &&
+            <div className={s.excerpt}>{parse(post.seo?.metaDesc)}</div>
+          }
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             <div className={s.author}>{post.author?.node?.name}</div>
             {!!post.blogSingle?.readingTime &&

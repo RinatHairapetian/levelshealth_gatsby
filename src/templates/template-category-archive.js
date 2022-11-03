@@ -133,6 +133,9 @@ export const pageQuery = graphql`
         }
         title
         excerpt
+        seo {
+          metaDesc
+        }
         categories {
           nodes {
             name
