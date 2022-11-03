@@ -15,39 +15,57 @@
     margin-bottom: 24px;
     gap: 10px;
     flex-wrap: wrap;
+    margin-top: 35px;
 }
 
 .post-categories span {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.12em;
+    font-weight: 600;
+    font-size: 14.08px;
+    line-height: 18.304px;
+    letter-spacing: 1.408px;
     text-transform: uppercase;
-    color: #000000;
+    color: #05473c;
 }
 
-.post-thumbnail h1 {
+.post-categories span:not(:last-child)::after {
+    content: "|";
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 100%;
-    text-align: center;
-    letter-spacing: -0.03em;
-    color: #000000;
+    font-weight: 600;
+    font-size: 14.08px;
+    line-height: 18.304px;
+    letter-spacing: 1.408px;
+    text-transform: uppercase;
+    color: #05473c;
+    padding-left: 10px;
+    transform: translateY(-1px);
+    display: inline-block;
+}
+
+.title {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 52.8px;
+    line-height: 59.4px;
+    text-align: left;
+    letter-spacing: 0;
+    color: #373737;
 }
 
 .meta-desc {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 130%;
-    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    letter-spacing: 0px;
     color: #000000;
-    margin-top: 40px;
 }
 
 .socials {
@@ -65,6 +83,13 @@
 .socials .social-item {
     min-height: 40px;
     min-width: 40px;
+}
+
+.post-author-wrapper {
+    border: 1px solid #d1d6d6 !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 17.6px 0;
 }
 
 .post-author .avatar {
@@ -175,23 +200,25 @@
 .article-content h2 {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
     color: #000000;
-    margin-top: 70px;
-    margin-bottom: 30px;
+    margin-top: 38px;
+    margin-bottom: 24px;
+    letter-spacing: 0px;
 }
 
 .article-content p {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 160%;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 45px;
     color: #000000;
     margin-bottom: 30px;
+
+    letter-spacing: 0px;
 }
 
 .article-content ul {
@@ -229,14 +256,14 @@
 .post-date {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: -0.01em;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 1.4px;
     color: #000000;
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
+    text-transform: uppercase;
+    opacity: 1;
 }
 
 
@@ -273,12 +300,14 @@
 
 
 @media screen and (max-width: 767.9px) {
-    .post-thumbnail h1 {
+    .title {
         font-size: 36px;
+        line-height: 40px;
     }
 
     .meta-desc {
         font-size: 18px;
+        line-height: 22.5px;
         margin-top: 36px;
     }
 
@@ -310,13 +339,13 @@
     }
 
     .article-content h2 {
-        font-size: 32px;
         margin-top: 60px;
         margin-bottom: 20px;
     }
 
     .article-content p {
         font-size: 18px;
+        line-height: 28px;
         margin-bottom: 20px;
     }
 
@@ -328,5 +357,6 @@
 
     .article-content ul li {
         font-size: 18px;
+        line-height: 28px;
     }
 }

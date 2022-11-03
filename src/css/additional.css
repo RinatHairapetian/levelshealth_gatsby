@@ -25,12 +25,31 @@
     display: table-cell;
 }
 
-.display_post p.excerpt {
-    font-size: .45em !important
+.display_post .post_wrapper .post_thumbnail img {
+    max-height: 200px !important;
+    min-width: 200px;
 }
 
-.display_post .post_wrapper .post_thumbnail img {
-    height: 200px !important
+.display_post .post_wrapper a.button {
+    background: #54ECCA 0% 0% no-repeat padding-box;
+    border-radius: 24px;
+    text-align: center;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 1.6px;
+    color: #05473C !important;
+    padding: 15px;
+    display: inline-block;
+    min-width: 250px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.display_post .post_wrapper a.button:hover {
+    background: #26e7bc 0% 0% no-repeat padding-box;
 }
 
 .display_post {
@@ -45,6 +64,35 @@
 .display_post .post_wrapper {
     max-width: 800px;
     margin: auto
+}
+
+.display_post .post_title {
+    text-align: left;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    padding: 0;
+    margin-bottom: 11px;
+}
+
+.display_post .excerpt {
+    text-align: left;
+    text-align: left;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    padding: 0;
+    margin-bottom: 26px;
 }
 
 .display_post .post_wrapper .tc_post_thumbnail_before {

@@ -19,7 +19,7 @@ const AlgoliaInitialize = () => {
 const PostViewed = (
     objectIds
 ) => {
-    console.log(process.env.ALGOLIA_INDEX_NAME, objectIds);
+    // console.log(process.env.ALGOLIA_INDEX_NAME, objectIds);
     aa('viewedObjectIDs', {
         userToken: "user-1", // required for Node.js
         index: process.env.ALGOLIA_INDEX_NAME,

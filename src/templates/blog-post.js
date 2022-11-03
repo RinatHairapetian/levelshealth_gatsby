@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import parse from "html-react-parser";
 import React, { useEffect } from "react";
 import * as s from "../css/blog-post.module.css";
@@ -14,9 +14,12 @@ import "../css/@wordpress/block-library/build-style/style.css";
 import "../css/@wordpress/block-library/build-style/theme.css";
 
 import AlgoliaInitialize, { PostViewed } from '../utils/AlgoliaInitialize';
+import BlogSignup from './../components/blog-signup/blog-signup';
+import CategoriesBlog from './../components/categories-blog/categories-blog';
 import HeaderBlog from './../components/header-blog/header-blog';
 import Layout from "./../components/layout";
 import Seo from "./../components/seo";
+import UltimateGuides from './../components/ultimate-guides/ultimate-guides';
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   useEffect(() => {
@@ -28,7 +31,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     alt: post.featuredImage?.node?.altText || ``,
   }
 
-
   let thumbStyle = {};
   if (!!featuredImage.data) {
     thumbStyle["backgroundImage"] = `linear-gradient(180deg, rgba(255, 255, 255, 0) 38.02%, #FFFFFF 100%), url(${featuredImage.data.images.fallback.src})`;
@@ -37,135 +39,116 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   return (
     <Layout>
       <HeaderBlog />
+      <CategoriesBlog />
       <Seo title={post.title} description={post.excerpt} />
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <div className={`${s.postThumbnail}`} style={thumbStyle}>
-          {post.categories?.nodes?.length > 0 &&
-            <div className={`${s.postCategories}`}>
-              {post.categories?.nodes?.map((c, i) => {
-                return <span key={`cat-${i}`}>{c.name}</span>
-              })}
-            </div>
-          }
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-        </div>
-        <div className="container position-relative">
-          {!!post.seo?.metaDesc &&
-            <div className={`${s.metaDesc}`}>{post.seo?.metaDesc}</div>
-          }
 
-          <div className={`${s.socials}`}>
-            <StaticImage
-              src="../img/socials/facebook.svg"
-              alt="facebook"
-              className={`${s.socialItem}`}
-            />
-            <StaticImage
-              src="../img/socials/twitter.svg"
-              alt="twitter"
-              className={`${s.socialItem}`}
-            />
-            <StaticImage
-              src="../img/socials/linkedin.svg"
-              alt="linkedin"
-              className={`${s.socialItem}`}
-            />
-            <StaticImage
-              src="../img/socials/link.svg"
-              alt="link"
-              className={`${s.socialItem}`}
-            />
-            <StaticImage
-              src="../img/socials/email.svg"
-              alt="email"
-              className={`${s.socialItem}`}
-            />
-          </div>
+        <div className="container px-lg-0">
+          <div className="row">
+            <div className="col-xl-9">
+              <div className="lr-xl">
 
-          <div className="d-flex justify-content-between my-4">
-            <div className="">
-              {!!post.author?.node?.name &&
-                <div className={`${s.postAuthor} d-flex align-items-center`}>
-                  {!!post.author?.node?.avatar?.url &&
-                    <div className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></div>
-                  }
-                  <div className="d-flex flex-column">
-                    <h3 className={s.authorName}>{post.author?.node?.name}</h3>
-                    <span className={s.authorRole}>Author</span>
+                {featuredImage?.data && (
+                  <GatsbyImage
+                    loading="eager"
+                    placeholder="none"
+                    image={featuredImage.data}
+                    alt={featuredImage.alt}
+                    className={``}
+                    style={{ aspectRatio: '12 / 5', }}
+                  />
+                )}
+
+                {(post.categories?.nodes?.length > 0 || post.types?.nodes?.length > 0) &&
+                  <div className={`${s.postCategories}`}>
+                    {post.categories?.nodes?.map((c, i) => {
+                      return <span key={`cat-${i}`}>{c.name}</span>
+                    })}
+                    {post.types?.nodes?.map((t, i) => {
+                      return <span key={`type-${i}`}>{t.name}</span>
+                    })}
+                  </div>
+                }
+                {/* {post.types?.nodes?.length > 0 &&
+                  <div className={`${s.postTypes}`}>
+                    {post.types?.nodes?.map((t, i) => {
+                      return <span key={`type-${i}`}>{t.name}</span>
+                    })}
+                  </div>
+                } */}
+                <h1 className={s.title} itemProp="headline">{parse(post.title)}</h1>
+
+
+                <div className={`${s.postAuthorWrapper} row flex-xl-nowrap mx-0 align-items-center my-4`}>
+                  <div className="col-xl-6 px-0 pe-xl-3">
+                    {!!post.author?.node?.name &&
+                      <div className={`${s.postAuthor} d-flex align-items-center`}>
+                        {!!post.author?.node?.avatar?.url &&
+                          <div className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></div>
+                        }
+                        <div className="d-flex flex-column">
+                          <h3 className={s.authorName}>{post.author?.node?.name}</h3>
+                          <span className={s.authorRole}>Author</span>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                  <div className="col-xl-6 px-0 ps-xl-3 mt-3 mt-xl-0 d-flex align-items-center justify-content-between">
+                    <div>
+                      <div className={`${s.postDate} mb-2 pb-1 text-start text-xl-end`}>UPDATED: {post.modified}</div>
+                      <div className={`${s.postDate} text-start text-xl-end`}>PUBLISHED: {post.date}</div>
+                    </div>
+                    {!!post.blogSingle?.readingTime &&
+                      <div className="d-flex justify-content-end align-items-center h-100 col-4 px-0">
+                        <div className={`${s.readingTime}`}>{post.blogSingle?.readingTime} read</div>
+                      </div>
+                    }
                   </div>
                 </div>
-              }
+                {!!post.seo?.metaDesc &&
+                  <div className={`${s.metaDesc}`}>{post.seo?.metaDesc}</div>
+                }
+                <div className="d-block d-xl-none">
+                  {post.postSidebar?.spotifyCode && parse(post.postSidebar?.spotifyCode)}
+                </div>
+                {post.blogSingle?.contentOverview?.length > 0 &&
+                  <div className={`${s.highlights}`}>
+                    <h3>ARTICLE highlights</h3>
+                    <ul>
+                      {post.blogSingle?.contentOverview?.map((o, i) => {
+                        return <li key={`highlight-${i}`}>{o.item}</li>
+                      })}
+                    </ul>
+                  </div>
+                }
+
+                {!!post.content && (
+                  <section itemProp="articleBody" className={`${s.articleContent}`}>{parse(post.content)}</section>
+                )}
+
+              </div>
+
             </div>
-            <div className="">
-              {!!post.blogSingle?.readingTime &&
-                <div className="d-flex justify-content-end align-items-end h-100">
-                  <div className={`${s.readingTime}`}>{post.blogSingle?.readingTime} read</div>
+            <div className="col-xl-3">
+              <div className="mb-3">
+                <BlogSignup />
+              </div>
+              <div className="d-none d-xl-block">
+                {post.postSidebar?.spotifyCode && parse(post.postSidebar?.spotifyCode)}
+              </div>
+              {post.postSidebar?.featuredSidebar?.length > 0 &&
+                <div className="sticky-top">
+                  <UltimateGuides title={post.postSidebar?.featuredSidebarIntro} posts={[...post.postSidebar?.featuredSidebar]} showFeaturedImage={true} />
                 </div>
               }
             </div>
           </div>
-
-          {post.blogSingle?.contentOverview?.length > 0 &&
-            <div className={`${s.highlights}`}>
-              <h3>ARTICLE highlights</h3>
-              <ul>
-                {post.blogSingle?.contentOverview?.map((o, i) => {
-                  return <li key={`highlight-${i}`}>{o.item}</li>
-                })}
-              </ul>
-            </div>
-          }
-
-          {!!post.content && (
-            <section itemProp="articleBody" className={`${s.articleContent}`}>{parse(post.content)}</section>
-          )}
-
-          <p className={`${s.postDate}`}>{post.date}</p>
-
-          {post.types?.nodes?.length > 0 &&
-            <div className={`${s.postTypes}`}>
-              {post.types?.nodes?.map((t, i) => {
-                return <span key={`type-${i}`}>{t.name}</span>
-              })}
-            </div>
-          }
-
-
-          {/* 
-        <nav className="blog-post-nav">
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.uri} rel="prev">
-                  ← {parse(previous.title)}
-                </Link>
-              )}
-            </li>
-
-            <li>
-              {next && (
-                <Link to={next.uri} rel="next">
-                  {parse(next.title)} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav> */}
         </div>
       </article>
-
     </Layout>
   )
 }
@@ -183,7 +166,8 @@ export const pageQuery = graphql`
       excerpt
       content
       title
-      date(formatString: "MMMM DD, YYYY")
+      date(formatString: "dddd MMMM DD, YYYY")
+      modified(formatString: "dddd MMMM DD, YYYY")
       author {
         node {
           avatar {
@@ -219,6 +203,43 @@ export const pageQuery = graphql`
         contentReviewerBio
         contentOverview {
           item
+        }
+      }
+      blogSingleAuthor {
+        isItAPostWithMultipleAuthors
+        isItAPublicationWithAAuthorReviewer
+        selectAuthoresReviewer {
+          avatar {
+            url
+          }
+          name
+          nodeType
+        }
+        selectAuthores {
+          name
+          avatar {
+            url
+          }
+        }
+      }
+      postSidebar {
+        spotifyCode
+        featuredSidebarIntro
+        featuredSidebar {
+          ... on WpPost {
+            title
+            uri
+            featuredImage {
+              node {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
         }
       }
       types {
