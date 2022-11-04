@@ -19,7 +19,7 @@ import CategoriesBlog from './../components/categories-blog/categories-blog';
 import HeaderBlog from './../components/header-blog/header-blog';
 import Layout from "./../components/layout";
 import Seo from "./../components/seo";
-import UltimateGuides from './../components/ultimate-guides/ultimate-guides';
+import SidebarFeaturedPosts from './../components/sidebar-featured-posts/sidebar-featured-posts';
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   useEffect(() => {
@@ -58,8 +58,8 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                     placeholder="none"
                     image={featuredImage.data}
                     alt={featuredImage.alt}
-                    className={``}
-                    style={{ aspectRatio: '12 / 5', }}
+                    className={`w-100`}
+                  // style={{ aspectRatio: '12 / 5', }}
                   />
                 )}
 
@@ -81,8 +81,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                   </div>
                 } */}
                 <h1 className={s.title} itemProp="headline">{parse(post.title)}</h1>
-
-
+                {!!post.seo?.metaDesc &&
+                  <div className={`${s.metaDesc}`}>{post.seo?.metaDesc}</div>
+                }
                 <div className={`${s.postAuthorWrapper} row flex-xl-nowrap mx-0 align-items-center my-4`}>
                   <div className="col-xl-6 px-0 pe-xl-3">
                     {!!post.author?.node?.name &&
@@ -91,15 +92,15 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                           <div className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></div>
                         }
                         <div className="d-flex flex-column">
+                          <span className={s.authorRole}>Written by</span>
                           <h3 className={s.authorName}>{post.author?.node?.name}</h3>
-                          <span className={s.authorRole}>Author</span>
                         </div>
                       </div>
                     }
                   </div>
                   <div className="col-xl-6 px-0 ps-xl-3 mt-3 mt-xl-0 d-flex align-items-center justify-content-between">
                     <div>
-                      <div className={`${s.postDate} mb-2 pb-1 text-start text-xl-end`}>UPDATED: {post.modified}</div>
+                      <div className={`${s.postDate} text-start text-xl-end`}>UPDATED: {post.modified}</div>
                       <div className={`${s.postDate} text-start text-xl-end`}>PUBLISHED: {post.date}</div>
                     </div>
                     {!!post.blogSingle?.readingTime &&
@@ -109,9 +110,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                     }
                   </div>
                 </div>
-                {!!post.seo?.metaDesc &&
-                  <div className={`${s.metaDesc}`}>{post.seo?.metaDesc}</div>
-                }
+
                 <div className="d-block d-xl-none">
                   {post.postSidebar?.spotifyCode && parse(post.postSidebar?.spotifyCode)}
                 </div>
@@ -142,7 +141,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
               </div>
               {post.postSidebar?.featuredSidebar?.length > 0 &&
                 <div className="sticky-top">
-                  <UltimateGuides title={post.postSidebar?.featuredSidebarIntro} posts={[...post.postSidebar?.featuredSidebar]} showFeaturedImage={true} />
+                  <SidebarFeaturedPosts title={post.postSidebar?.featuredSidebarIntro} posts={[...post.postSidebar?.featuredSidebar]} />
                 </div>
               }
             </div>
@@ -166,8 +165,8 @@ export const pageQuery = graphql`
       excerpt
       content
       title
-      date(formatString: "dddd MMMM DD, YYYY")
-      modified(formatString: "dddd MMMM DD, YYYY")
+      date(formatString: "MM/DD/YYYY")
+      modified(formatString: "MM/DD/YYYY")
       author {
         node {
           avatar {

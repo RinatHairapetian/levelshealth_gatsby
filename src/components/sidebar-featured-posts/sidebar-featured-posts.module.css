@@ -1,0 +1,58 @@
+.sidebar-featured-posts {
+    opacity: 1;
+}
+
+.title {
+    background: #373737 0% 0% no-repeat padding-box;
+    opacity: 1;
+
+    text-align: left;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-weight: 400;
+    font-size: 21.12px;
+    line-height: 23.76px;
+    padding: 9px 18px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.post:not(:last-child) {
+    border-bottom: 1px solid #9EA8A9;
+}
+
+.post .title-wrap {
+    /* margin-bottom: 12px;
+    max-height: 86px;
+    overflow: hidden; */
+}
+
+.post .post-title {
+    text-align: left;
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: #373737;
+    opacity: 1;
+}
+
+

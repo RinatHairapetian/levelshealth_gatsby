@@ -295,3 +295,35 @@ img.aligncenter {
 .slick-arrow.slick-disabled {
     display: none !important;
 }
+
+.fundamentals .slick-arrow::before {
+    content: "";
+    display: block;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: transparent none repeat scroll 0 0;
+    border-color: #373737 #373737 currentcolor currentcolor;
+    border-image: none;
+    border-style: solid solid none none;
+    border-width: 1px 1px 0 0;
+    cursor: pointer;
+    height: 16px;
+    margin: 0;
+    transition: opacity .3s ease 0s,border-width .3s ease 0s;
+    width: 16px;
+    border-width: 3px;
+}
+
+.fundamentals .slick-arrow:hover::before{
+    border-width: 5px;
+}
+
+.fundamentals .slick-arrow.slick-prev::before {
+    transform: rotate(-135deg);
+}
+
+.fundamentals .slick-arrow.slick-next::before {
+    transform:  rotate(45deg);
+}

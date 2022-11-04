@@ -11,33 +11,32 @@ const Fundamentals = ({ posts }) => {
     arrows: true,
     slidesToShow: 4,
     // centerMode: true,
-    infinite: false,
+    infinite: true,
     swipeToSlide: true,
     responsive: [
+      // {
+      //   breakpoint: 1399.9,
+      //   settings: {
+      //     slidesToShow: 3,
+      //   },
+      // },
       {
-        breakpoint: 1399.9,
+        breakpoint: 1199,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 1199.9,
+        breakpoint: 991,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 991.9,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 575.9,
+        breakpoint: 767,
         settings: {
           slidesToShow: 1,
           arrows: false,
-          infinite: true,
           autoplay: true,
           autoplaySpeed: 5000,
         },
@@ -45,7 +44,7 @@ const Fundamentals = ({ posts }) => {
     ],
   };
   return (
-    <div className={`${s.fundamentals}`}>
+    <div className={`${s.fundamentals} fundamentals`}>
       <div className="container px-lg-0">
         <h2 className={`${s.title}`}>Metabolic Fundamentals: Start Here</h2>
 

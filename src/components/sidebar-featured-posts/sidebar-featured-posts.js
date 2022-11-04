@@ -2,15 +2,15 @@ import { Link } from "gatsby";
 import { GatsbyImage } from 'gatsby-plugin-image';
 import parse from "html-react-parser";
 import React from "react";
-import * as s from "./ultimate-guides.module.css";
+import * as s from "./sidebar-featured-posts.module.css";
 
-const UltimateGuides = ({ title, posts, link }) => {
+const SidebarFeaturedPosts = ({ title, posts }) => {
   let firstPosts = [];
   if (posts?.length) {
     firstPosts = posts.slice(0, 5);
   }
   return (
-    <div className={`${s.ultimateGuides} py-3`}>
+    <div className={`${s.sidebarFeaturedPosts} py-3`}>
       <h2 className={`${s.title}`}>{title}</h2>
       <div className={`${s.posts}`}>
         {(firstPosts?.length > 0) &&
@@ -20,21 +20,26 @@ const UltimateGuides = ({ title, posts, link }) => {
               alt: post.featuredImage?.node?.altText || ``,
             }
             return <Link to={post.uri} key={post.uri} className={`${s.post}`}>
-              <span>
-                <div className={`${s.titleWrap}`}><h4 className={`${s.postTitle} title`} title={parse(post.title)}>{parse(post.title)}</h4></div>
-                <h6 className={s.author}>{post.author?.node?.name}</h6>
-              </span>
-              {(!!post.author?.node?.avatar?.url) &&
-                <span className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></span>
+              {(!!featuredImage?.data) &&
+                <GatsbyImage
+                  loading="eager"
+                  placeholder="none"
+                  image={featuredImage.data}
+                  alt={featuredImage.alt}
+                  className={``}
+                  style={{ maxWidth: '130px', maxHeight: '164px'}}
+                />
               }
+              <span>
+                <div className={`${s.titleWrap} text-start`}><h4 className={`${s.postTitle} title`} title={parse(post.title)}>{parse(post.title)}</h4></div>
+              </span>
             </Link>
           }
           )
         }
       </div>
-      {link}
     </div>
   );
 };
 
-export default UltimateGuides;
+export default SidebarFeaturedPosts;
