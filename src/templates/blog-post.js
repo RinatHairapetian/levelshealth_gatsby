@@ -41,7 +41,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
       <HeaderBlog />
       <CategoriesBlog />
       <Seo title={post.title} description={post.excerpt} />
-      <Script src="https://cdn.social9.com/js/socialshare.min.js" async defer content={process.env.SOCIAL9_CONTENT || "1533dc2b1123411b82328f3010cf5b69"}/>
+      {!!post?.id &&
+        <Script src="https://cdn.social9.com/js/socialshare.min.js" async defer content={process.env.SOCIAL9_CONTENT || "1533dc2b1123411b82328f3010cf5b69"}/>
+      }
       <article
         className="blog-post"
         itemScope
@@ -86,7 +88,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                   <div className={`${s.metaDesc}`}>{post.seo?.metaDesc}</div>
                 }
                 <div className={`${s.postAuthorWrapper} row flex-xl-nowrap mx-0 align-items-center my-4`}>
-                  <div className="col-xl-6 px-0 pe-xl-3">
+                  <div className="col-xl-8 px-0 pe-xl-3">
                     {!!post.author?.node?.name &&
                       <div className={`${s.postAuthor} d-flex align-items-center`}>
                         {!!post.author?.node?.avatar?.url &&
@@ -99,7 +101,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                       </div>
                     }
                   </div>
-                  <div className="col-xl-6 px-0 ps-xl-3 mt-3 mt-xl-0 d-flex align-items-center justify-content-between">
+                  <div className="col-xl-4 px-0 ps-xl-3 mt-3 mt-xl-0 d-flex align-items-center justify-content-between">
                     <div>
                       <div className={`${s.postDate} text-start text-xl-end`}>UPDATED: {post.modified}</div>
                       <div className={`${s.postDate} text-start text-xl-end`}>PUBLISHED: {post.date}</div>

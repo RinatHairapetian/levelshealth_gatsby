@@ -17,6 +17,7 @@ import UltimateGuides from './../components/ultimate-guides/ultimate-guides';
 const BlogPage = ({ data }) => {
   const posts = data.allWpPost.nodes;
   const ultimateGuides = data.ultimateGuides.nodes;
+
   return (
     <Layout>
       <Seo title="Blog page" />

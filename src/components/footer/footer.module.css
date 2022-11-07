@@ -1,0 +1,197 @@
+.footer {
+    padding: 0;
+}
+
+.footer a:not(.btn) {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 90%, var(--cr-health) 0);
+    background-repeat: no-repeat;
+    transition: .4s ease;
+    background-size: 0 100%;
+}
+
+.top {
+    background-color: #e6e6e6;
+    padding: 52px 0 26px;
+}
+
+.footer-links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 14px;
+}
+
+.footer-links-wrapper>span {
+    color: #000;
+    font: 200 35.2px/1 'TT Hoves', sans-serif;
+}
+
+.bottom {
+    background-color: #101010;
+    color: white;
+}
+
+.logo {
+    padding: 70px 0;
+    width: 185px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disclaimer-social-menus {
+    border-top: 1px solid #d1d6d6;
+}
+
+.disclaimer-social {
+    padding: 70px 70px 70px 0;
+}
+
+.disclaimer p {
+    padding-bottom: 15.8px;
+    margin-bottom: 20px;
+    font-family: 'TT Hoves', sans-serif;
+    font-weight: 400;
+    font-size: 15.84px;
+    line-height: 20.592px;
+}
+
+.footer-links {
+    display: block;
+}
+
+.footer-links a.button {
+    color: #fff;
+    border: solid 3px #54ecca;
+    background-color: transparent;
+    padding: 18px 50px;
+    border-radius: 30px;
+    font-family: 'TT Hoves', sans-serif;
+    font-weight: 600;
+    font-size: 15.84px;
+    line-height: 15.84px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-links a.button:hover {
+    background-color: #54ecca;
+    color: #000;
+}
+
+.footer-links a.button.noborder {
+    border-color: transparent;
+}
+
+.footer-links a.button.noborder:hover {
+    background-color: transparent;
+    color: #aaa;
+}
+
+.socials {
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.socials li {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-bottom: 0;
+}
+
+.socials li svg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 18px;
+    max-height: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+}
+
+.socials li:hover svg {
+    opacity: .6;
+}
+
+.socials li svg path {
+    fill: white;
+}
+
+
+.footer-links-wrapper {
+    padding: 70px 0 70px 70px;
+}
+
+.footer-links {
+    display: table;
+    width: 100%;
+    text-align: left;
+}
+
+.footer-links ul {
+    display: table-cell;
+    padding: 0;
+}
+
+.footer-links li {
+    display: block;
+}
+
+.footer-links li:not(:last-of-type) {
+    margin: 0 0 10px;
+}
+
+.footer-links a {
+    font-family: 'TT Hoves', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 23.4px;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+}
+
+.footer-links a:hover {
+    color: #aaa;
+}
+
+
+.copyright {
+    text-align: center;
+    padding: 35.2px 0;
+    border-top: 1px solid #d1d6d6;
+}
+
+.copyright p {
+    font-family: 'TT Hoves', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.84px;
+    line-height: 20.592px;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 991.9px) {
+    .disclaimer-social {
+        padding: 48px 0;
+    }
+    .footer-links-wrapper {
+        padding: 48px 0;
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+    .footer-links a {
+        font-size: 14px;
+        line-height: 18.2px;
+    }
+}
