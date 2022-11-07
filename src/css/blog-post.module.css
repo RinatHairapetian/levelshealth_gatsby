@@ -125,6 +125,7 @@
     color: #05473c;
     text-transform: uppercase;
 }
+
 /* 
 .post-author .author-role::before {
     content: "";
@@ -182,7 +183,8 @@
 
 
 
-.highlights ul li {
+.highlights ul li,
+.highlights ol li {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -199,10 +201,10 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
-    line-height: 35px;
-    color: #000000;
-    margin-top: 38px;
+    font-size: 42.24px;
+    line-height: 47.52px;
+    color: #373737;
+    margin-top: 34px;
     margin-bottom: 24px;
     letter-spacing: 0px;
 }
@@ -210,12 +212,12 @@
 .article-content p {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 26px;
-    line-height: 45px;
-    color: #000000;
-    margin-bottom: 30px;
-
+    font-weight: 400;
+    font-size: 21.12px;
+    line-height: 30.64px;
+    color: #3d4c49;
+    padding-bottom: 21.120px;
+    margin-bottom: 0;
     letter-spacing: 0px;
 }
 
@@ -223,13 +225,14 @@
     margin-bottom: 30px;
 }
 
-.article-content ul li {
+.article-content ul li,
+.article-content ol li {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 160%;
-    color: #101010;
+    font-size: 21.12px;
+    line-height: 30.64px;
+    color: #3d4c49;
 }
 
 .article-content ul li::marker {
@@ -250,6 +253,29 @@
     height: auto;
 }
 
+.article-content blockquote {
+    max-width: 660px;
+    border-left: 5px solid #54ecca;
+    margin: 28px auto;
+    padding: 1% 2%;
+    clear: both;
+    color: #000;
+}
+
+.article-content blockquote:before {
+    display: block;
+    content: url(../img/icon_quote.svg);
+    margin-bottom: 0.25em;
+}
+
+.article-content blockquote p {
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #000;
+}
 
 .post-date {
     font-family: 'TT Hoves', sans-serif;
@@ -336,24 +362,39 @@
     }
 
     .article-content h2 {
-        margin-top: 60px;
-        margin-bottom: 20px;
+        margin-top: 21px;
+        margin-bottom: 14.5px;
+        font-size: 26.304px;
+        line-height: 29.592px;
     }
 
     .article-content p {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 17.536px;
+        line-height: 25.42px;
         margin-bottom: 20px;
     }
 
-    .article-content ul {
+    .article-content ul,
+    .article-content ol {
         margin-bottom: 20px;
         list-style-position: outside;
         padding-left: 20px;
     }
 
-    .article-content ul li {
-        font-size: 18px;
-        line-height: 28px;
+    .article-content ul li,
+    .article-content ol li {
+        font-size: 13.152px;
+        line-height: 32px;
+    }
+
+
+    .article-content blockquote {
+        width: 80%!important;
+        margin: 21px auto;
+    }
+
+    .article-content blockquote p {
+        font-size: 26.25px;
+        line-height: 26.25px;
     }
 }
