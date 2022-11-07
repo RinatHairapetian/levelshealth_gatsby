@@ -201,13 +201,13 @@ module.exports = {
       },
     },
 
-    {
-      resolve: "gatsby-plugin-social9-socialshare",
-      options: {
-        async: true,
-        defer: true,
-        content: process.env.SOCIAL9_CONTENT || "1533dc2b1123411b82328f3010cf5b69"
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-social9-socialshare",
+    //   options: {
+    //     async: true,
+    //     defer: true,
+    //     content: process.env.SOCIAL9_CONTENT || "1533dc2b1123411b82328f3010cf5b69"
+    //   },
+    // },
   ],
 }

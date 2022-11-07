@@ -24,9 +24,9 @@ const UltimateGuides = ({ title, posts, link }) => {
                 <div className={`${s.titleWrap}`}><h4 className={`${s.postTitle} title`} title={parse(post.title)}>{parse(post.title)}</h4></div>
                 <h6 className={s.author}>{post.author?.node?.name}</h6>
               </span>
-              {(!!post.author?.node?.avatar?.url) &&
+              {/* {(!!post.author?.node?.avatar?.url) &&
                 <span className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></span>
-              }
+              } */}
             </Link>
           }
           )

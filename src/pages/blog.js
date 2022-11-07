@@ -16,6 +16,7 @@ import UltimateGuides from './../components/ultimate-guides/ultimate-guides';
 
 const BlogPage = ({ data }) => {
   const posts = data.allWpPost.nodes;
+  const ultimateGuides = data.ultimateGuides.nodes;
   return (
     <Layout>
       <Seo title="Blog page" />
@@ -76,7 +77,7 @@ const BlogPage = ({ data }) => {
             </div>
           </div>
           <div className="col-12 col-xl-3">
-            <UltimateGuides title={'Ultimate Guides'} posts={[...posts]} link={<Link to="/blog/category/ultimate-guides">More Ultimate Guides</Link>} />
+            <UltimateGuides title={'Ultimate Guides'} posts={[...ultimateGuides]} link={<Link to="/blog/category/ultimate-guides">More Ultimate Guides</Link>} />
           </div>
         </div>
       </div >
@@ -113,6 +114,57 @@ export const pageQuery = graphql`
     allWpPost(
       sort: { fields: [date], order: DESC }
       limit: 6
+    ) {
+      nodes {
+        uri
+        author {
+          node {
+            avatar {
+              url
+            }
+            name
+          }
+        }
+        blogSingle {
+          readingTime
+        }
+        title
+        excerpt
+        seo {
+          metaDesc
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+        types {
+          nodes {
+            name
+          }
+        }
+        tags {
+          nodes {
+            name
+          }
+        }
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+        date(formatString: "MMM DD, YYYY")
+      }
+    }
+    ultimateGuides: allWpPost(
+      sort: { fields: [date], order: DESC }
+      limit: 5
+      filter: {slug: {in: ["what-is-a-continuous-glucose-monitor", "what-are-processed-foods-and-why-are-they-so-bad-for-metabolic-health", "the-ultimate-guide-to-understanding-your-cholesterol-panel-and-metabolic-blood-tests", "walking-after-a-meal", "why-glucose-matters-to-covid-19-outcomes"]}}
     ) {
       nodes {
         uri
