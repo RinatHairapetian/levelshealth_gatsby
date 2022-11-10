@@ -41,9 +41,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
       <HeaderBlog />
       <CategoriesBlog />
       <Seo title={post.title} description={post.excerpt} />
-      {!!post?.id &&
+      {/* {!!post?.id &&
         <Script src="https://cdn.social9.com/js/socialshare.min.js" async defer content={process.env.SOCIAL9_CONTENT || "1533dc2b1123411b82328f3010cf5b69"}/>
-      }
+      } */}
       <article
         className="blog-post"
         itemScope
