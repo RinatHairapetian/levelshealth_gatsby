@@ -13,13 +13,21 @@ const BlogSignup = () => {
   const [eu_consent, set_eu_consent] = React.useState(false);
 
   React.useEffect(() => {
-    fetch('https://ipwho.is/')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setCountry(data.country);
-        setRegion(data.continent_code);
-      });
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    };
+    // fetch('https://ipwho.is/', requestOptions)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log(data);
+    //     setCountry(data.country);
+    //     setRegion(data.continent_code);
+    //   });
   }, []);
 
   // const client = require('drip-nodejs')({ token: process.env.DRIP_API_TOKEN, accountId: process.env.DRIP_ACCOUNT_ID });
@@ -46,19 +54,20 @@ const BlogSignup = () => {
 
     console.log(payload);
 
+    let token = process.env.DRIP_API_TOKEN;
     const requestOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Access-Control-Allow-Origin': 'https://api.getdrip.com',
-        "Authorization": `Basic ${process.env.DRIP_API_TOKEN.toString('base64')}`,
+        "Authorization": `Basic ${token.toString('base64')}`,
       },
       body: JSON.stringify(payload),
       // mode: "no-cors",
     };
 
-    fetch(url, requestOptions);
+    // fetch(url, requestOptions);
 
     // client.createUpdateSubscriber(payload)
     //   .then((response) => {
