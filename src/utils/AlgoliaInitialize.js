@@ -24,6 +24,7 @@ const PostViewed = (
         userToken: "user-1", // required for Node.js
         index: process.env.ALGOLIA_INDEX_NAME,
         eventName: 'PostViewed',
+        eventType: 'view',
         objectIDs: [...objectIds]
     });
 };
