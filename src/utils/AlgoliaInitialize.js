@@ -22,7 +22,7 @@ const PostViewed = (
     // console.log(process.env.ALGOLIA_INDEX_NAME, objectIds);
     aa('viewedObjectIDs', {
         userToken: "user-1", // required for Node.js
-        index: process.env.ALGOLIA_INDEX_NAME,
+        index: process.env.ALGOLIA_INDEX_NAME || `Pages`,
         eventName: 'PostViewed',
         eventType: 'view',
         objectIDs: [...objectIds]
