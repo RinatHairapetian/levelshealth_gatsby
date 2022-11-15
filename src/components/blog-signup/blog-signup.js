@@ -1,7 +1,6 @@
 import React from "react";
 import * as s from "./blog-signup.module.css";
-// import Buffer from "node"
-// const client = require('drip-nodejs')({ token: process.env.DRIP_API_TOKEN, accountId: process.env.DRIP_ACCOUNT_ID });
+// const dripNodejs = require("drip-nodejs");
 
 const BlogSignup = () => {
 
@@ -21,13 +20,13 @@ const BlogSignup = () => {
         'Access-Control-Allow-Origin': '*',
       },
     };
-    // fetch('https://ipwho.is/', requestOptions)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log(data);
-    //     setCountry(data.country);
-    //     setRegion(data.continent_code);
-    //   });
+    fetch('https://ipwho.is/', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setCountry(data.country);
+        setRegion(data.continent_code);
+      });
   }, []);
 
   // const client = require('drip-nodejs')({ token: process.env.DRIP_API_TOKEN, accountId: process.env.DRIP_ACCOUNT_ID });
@@ -61,7 +60,7 @@ const BlogSignup = () => {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Access-Control-Allow-Origin': 'https://api.getdrip.com',
-        "Authorization": `Basic ${token.toString('base64')}`,
+        "Authorization": `Token ${token}`,
       },
       body: JSON.stringify(payload),
       // mode: "no-cors",
@@ -69,6 +68,7 @@ const BlogSignup = () => {
 
     // fetch(url, requestOptions);
 
+    // const client = dripNodejs({ token: process.env.DRIP_API_TOKEN, accountId: process.env.DRIP_ACCOUNT_ID });
     // client.createUpdateSubscriber(payload)
     //   .then((response) => {
     //     // Handle `response.body`
@@ -97,7 +97,7 @@ const BlogSignup = () => {
             </g>
           </svg>
         </div>
-        <h2 className={s.title}>Sign up<br /> for the<br /> Levels Newsletter</h2>
+        <h2 className={s.title}>Sign up<br /> for the<br /> Levels<br /> Newsletter</h2>
         <div className={s.form}>
           <input type='email' className={s.input} placeholder="Type your email" value={email}
             onChange={e => setEmail(e.target.value)} />

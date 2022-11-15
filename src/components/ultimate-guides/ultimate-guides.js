@@ -19,15 +19,19 @@ const UltimateGuides = ({ title, posts, link }) => {
               data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
               alt: post.featuredImage?.node?.altText || ``,
             }
-            return <Link to={post.uri} key={post.uri} className={`${s.post}`}>
+            return <div to={post.uri} key={post.uri} className={`${s.post}`}>
               <span>
-                <div className={`${s.titleWrap}`}><h4 className={`${s.postTitle} title`} title={parse(post.title)}>{parse(post.title)}</h4></div>
+                <div className={`${s.titleWrap}`}>
+                  <h4 className={`${s.postTitle}`} title={parse(post.title)}>
+                    <Link to={post.uri} key={post.uri} className="title">{parse(post.title)}</Link>
+                  </h4>
+                </div>
                 <h6 className={s.author}>{post.author?.node?.name}</h6>
               </span>
               {/* {(!!post.author?.node?.avatar?.url) &&
                 <span className={s.avatar} style={{ backgroundImage: `url(${post.author?.node?.avatar?.url})` }}></span>
               } */}
-            </Link>
+            </div>
           }
           )
         }

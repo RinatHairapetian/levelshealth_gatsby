@@ -10,7 +10,10 @@
     }
 }
 
-
+body {
+    font-size: calc(1em + 1vw)!important;
+    line-height: 1 !important;
+}
 
 /*display_post*/
 

@@ -35,6 +35,7 @@
     line-height: 112.5%;
     letter-spacing: -0.02em;
     color: #373737;
+    font-size: .8em!important;
 }
 
 
@@ -49,12 +50,12 @@
 .categories span {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #000000;
+    color: #05473c;
     position: relative;
     display: inline-flex;
     align-items: center;

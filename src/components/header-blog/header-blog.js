@@ -13,7 +13,7 @@ const HeaderBlog = ({ isHomePage }) => {
         <div className="global-wrapper container-fluid container-lg">
           <div className={s.headerWrapper}>
             <div className={s.headerLinksWrapper}>
-              <Link className={``} to="/">
+              <Link className={`d-flex`} to="/">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#000" width="144.47" height="23.05" viewBox="0 0 144.47 23.05">
                   <polygon points="87.11 2.46 82.02 16.67 81.96 16.67 76.88 2.46 73.43 2.46 73.39 2.51 80.15 20.59 83.86 20.59 90.49 2.51 90.45 2.46 87.11 2.46"></polygon>
                   <path d="M142.25,12h0L136.7,8.52a1.66,1.66,0,0,1-.84-1.41,1.57,1.57,0,0,1,1.57-1.55h5.89V2.46H137.6a4.77,4.77,0,0,0-4.81,4.76h0A4.61,4.61,0,0,0,135,11.1l5.63,3.48a1.56,1.56,0,0,1,.75,1.3,1.68,1.68,0,0,1-1.68,1.61h-5.44l-1.85,3.05v.05h7.23a4.8,4.8,0,0,0,4.82-4.76h0A4.64,4.64,0,0,0,142.25,12Z"></path>
@@ -26,7 +26,7 @@ const HeaderBlog = ({ isHomePage }) => {
                 </svg>
               </Link>
               <span className="d-none d-lg-inline-block">|</span>
-              <Link className={`d-none d-lg-inline-block`} to="/blog">
+              <Link className={`d-none d-lg-inline-flex`} to="/blog">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#000" width="316.03" height="18.66" viewBox="0 0 316.03 18.66">
                   <path d="M93.2,9.33V9.2a5,5,0,0,0,.91-.93,5,5,0,0,0,.91-3,4.86,4.86,0,0,0-4.66-5h-9V18.4h8.68a4.86,4.86,0,0,0,5.18-4.52h0v-.52a4.76,4.76,0,0,0-1-3.09A3.82,3.82,0,0,0,93.2,9.33ZM84.79,3.24h4.66a2.1,2.1,0,0,1,2.21,2h0a1.61,1.61,0,0,1,0,.31,2.06,2.06,0,0,1-1.93,2.2,1,1,0,0,1-.25,0H84.82Zm4.94,12.18H84.81V10.75h4.92a2.34,2.34,0,0,1,0,4.67Z"></path>
                   <polygon points="10.25 12.96 9.72 12.96 5.45 0.25 0 0.25 0 18.4 3.37 18.4 3.37 5.83 3.9 5.83 8.17 18.4 11.8 18.4 16.08 5.83 16.6 5.83 16.6 18.4 19.96 18.4 19.96 0.25 14.52 0.25 10.25 12.96"></polygon>

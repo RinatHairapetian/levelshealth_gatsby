@@ -25,10 +25,10 @@ const BlogPage = ({ data }) => {
       <CategoriesBlog />
       <div className="container px-lg-0">
         <div className="row justify-content-center" style={{ rowGap: '15px' }}>
-          <div className="col-12 col-xl-8 col-xxl-9">
+          <div className="col-12 col-xl-9">
             <PostHero post={posts[0]} className="lr-xl" />
           </div>
-          <div className="col-12 col-xl-4 col-xxl-3 d-none d-xl-block">
+          <div className="col-12 col-xl-3 d-none d-xl-block">
             <BlogSignup />
           </div>
         </div>

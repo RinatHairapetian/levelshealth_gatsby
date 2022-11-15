@@ -44,6 +44,7 @@ export default styled(SearchBox)`
     padding: ${({ hasFocus }) => (hasFocus ? '2px 1px' : '0 0')};
     border-bottom: ${({ hasFocus }) => (hasFocus ? 'none' : '1px solid #d1d6d6')};
     order: ${({ hasFocus }) => (hasFocus ? '2' : '1')};
+    min-width: 250px;
 
     ${({ hasFocus }) => (hasFocus ? 'flex-grow: 1;' : '')};
 
@@ -61,7 +62,7 @@ export default styled(SearchBox)`
   }
 
   .SearchIcon {
-    width: 1em;
+    width: ${({ hasFocus }) => (hasFocus ? '1em' : '15px')};
     margin: 0 0.3em 0 0;
     color: ${({ theme }) => theme.foreground};
     pointer-events: none;

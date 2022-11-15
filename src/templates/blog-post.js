@@ -87,7 +87,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                 {!!post.seo?.metaDesc &&
                   <div className={`${s.metaDesc}`}>{post.seo?.metaDesc}</div>
                 }
-                <div className={`${s.postAuthorWrapper} row flex-xl-nowrap mx-0 align-items-center my-4`}>
+                <div className={`${s.postAuthorWrapper} row flex-xl-nowrap mx-0 align-items-center`}>
                   <div className="col-xl-8 px-0 pe-xl-3">
                     {!!post.author?.node?.name &&
                       <div className={`${s.postAuthor} d-flex align-items-center`}>

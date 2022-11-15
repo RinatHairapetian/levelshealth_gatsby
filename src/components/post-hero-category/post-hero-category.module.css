@@ -27,12 +27,12 @@
 .categories span {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #373737;
+    color: #05473c;
     position: relative;
     display: inline-flex;
     align-items: center;

@@ -11,7 +11,9 @@ const SidebarFeaturedPosts = ({ title, posts }) => {
   }
   return (
     <div className={`${s.sidebarFeaturedPosts} py-3`}>
-      <h2 className={`${s.title}`}>{title}</h2>
+      <div className={`${s.title}`}>
+        <h2>{title}</h2>
+      </div>
       <div className={`${s.posts}`}>
         {(firstPosts?.length > 0) &&
           firstPosts.map((post, i) => {
@@ -19,21 +21,26 @@ const SidebarFeaturedPosts = ({ title, posts }) => {
               data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
               alt: post.featuredImage?.node?.altText || ``,
             }
-            return <Link to={post.uri} key={post.uri} className={`${s.post}`}>
+            return <div key={post.uri} className={`${s.post}`}>
               {(!!featuredImage?.data) &&
-                <GatsbyImage
-                  loading="eager"
-                  placeholder="none"
-                  image={featuredImage.data}
-                  alt={featuredImage.alt}
-                  className={``}
-                  style={{ maxWidth: '130px', maxHeight: '164px'}}
-                />
+                <Link to={post.uri} style={{ maxWidth: '119px', maxHeight: '164px' }}>
+                  <GatsbyImage
+                    loading="eager"
+                    placeholder="none"
+                    image={featuredImage.data}
+                    alt={featuredImage.alt}
+                    className={`h-100`}
+                  />
+                </Link>
               }
               <span>
-                <div className={`${s.titleWrap} text-start`}><h4 className={`${s.postTitle} title`} title={parse(post.title)}>{parse(post.title)}</h4></div>
+                <div className={`${s.titleWrap} text-start`}>
+                  <h4 className={`${s.postTitle}`} title={parse(post.title)}>
+                    <Link to={post.uri} className="title">{parse(post.title)}</Link>
+                  </h4>
+                </div>
               </span>
-            </Link>
+            </div>
           }
           )
         }

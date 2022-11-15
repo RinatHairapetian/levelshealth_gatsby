@@ -15,8 +15,8 @@ export default connectSearchBox(
         <input
           className="SearchInput"
           type="text"
-          placeholder="Search articles, authors … "
-          aria-label="Search articles, authors … "
+          placeholder={`${hasFocus ? 'Search articles, authors … ' : 'Search'}`}
+          aria-label={`${hasFocus ? 'Search articles, authors … ' : 'Search'}`}
           onChange={e => refine(e.target.value)}
           value={currentRefinement}
           onFocus={onFocus}

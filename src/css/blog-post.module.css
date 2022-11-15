@@ -12,18 +12,18 @@
 
 .post-categories {
     display: flex;
-    margin-bottom: 24px;
+    margin-bottom: 0.5em;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 35px;
+    margin-top: 1em;
 }
 
 .post-categories span {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 14.08px;
-    line-height: 18.304px;
+    font-size: .4em!important;
+    line-height: 1.3;
     letter-spacing: 1.408px;
     text-transform: uppercase;
     color: #05473c;
@@ -34,8 +34,6 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 14.08px;
-    line-height: 18.304px;
     letter-spacing: 1.408px;
     text-transform: uppercase;
     color: #05473c;
@@ -48,21 +46,22 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 52.8px;
-    line-height: 59.4px;
+    font-size: 1.5em!important;
+    line-height: 1.125;
     text-align: left;
     letter-spacing: 0;
     color: #373737;
+    margin-bottom: 0.55em!important;
 }
 
 .meta-desc {
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 32.032px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    font-size: .7em!important;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1em;
     text-align: left;
     letter-spacing: 0px;
     color: #3d4c49;
@@ -89,7 +88,8 @@
     border: 1px solid #d1d6d6 !important;
     border-left: none !important;
     border-right: none !important;
-    padding: 17.6px 0;
+    padding: 0.5em 0!important;
+    margin-bottom: 0.5em!important;
 }
 
 .post-author .avatar {
@@ -201,8 +201,8 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 42.24px;
-    line-height: 47.52px;
+    font-size: 1.2em!important;
+    line-height: 1.125;
     color: #373737;
     margin-top: 34px;
     margin-bottom: 24px;
@@ -213,10 +213,10 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 21.12px;
-    line-height: 30.64px;
+    font-size: .6em!important;
+    line-height: 1.45;
     color: #3d4c49;
-    padding-bottom: 21.120px;
+    padding-bottom: 1em;
     margin-bottom: 0;
     letter-spacing: 0px;
 }
@@ -230,7 +230,7 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 21.12px;
+    font-size: .6em!important;
     line-height: 30.64px;
     color: #3d4c49;
 }
@@ -281,8 +281,8 @@
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 12.32px;
-    line-height: 16px;
+    font-size: .35em!important;
+    line-height: 1.125;
     letter-spacing: 1.232px;
     color: #3d4c49;
     text-transform: uppercase;

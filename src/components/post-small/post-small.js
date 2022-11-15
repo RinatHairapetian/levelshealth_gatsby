@@ -16,15 +16,17 @@ const PostSmall = ({ post, showTypes, className }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <Link to={post.uri} itemProp="url" className={s.postTitle}>
+        <div to={post.uri} itemProp="url" className={s.postTitle}>
           {image?.data && (
-            <GatsbyImage
-              loading="eager"
-              placeholder="none"
-              image={image.data}
-              alt={image.alt}
-              className={s.postImg}
-            />
+            <Link to={post.uri} itemProp="url" >
+              <GatsbyImage
+                loading="eager"
+                placeholder="none"
+                image={image.data}
+                alt={image.alt}
+                className={s.postImg}
+              />
+            </Link>
           )}
           {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
             <div className={s.categories}>
@@ -36,11 +38,13 @@ const PostSmall = ({ post, showTypes, className }) => {
               })}
             </div>
           }
-          <div className={s.titleWrap}><h3 itemProp="headline" className="title" title={parse(post.title)}>{parse(post.title)}</h3></div>
+          <div className={s.titleWrap}><h3 itemProp="headline" title={parse(post.title)}>
+            <Link to={post.uri} itemProp="url" className="title">{parse(post.title)}</Link>
+          </h3></div>
           <div className="d-flex justify-content-between align-items-center flex-wrap">
             <div className={s.author}>{post.author?.node?.name}</div>
           </div>
-        </Link>
+        </div>
       </article>
     </>
   );

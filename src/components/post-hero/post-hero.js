@@ -14,7 +14,7 @@ const PostHero = ({ post, showTypes, className }) => {
   }
   return (
     <>
-      <Link to={post.uri} itemProp="url" className={`${s.postHero} ${className ? className : ''}`}>
+      <div className={`${s.postHero} ${className ? className : ''}`}>
         <div className={`${s.info} col-md-6 col-xl-4 pe-3`}>
           <div>
             {(!!post.categories?.nodes?.length || !!post.types?.nodes?.length) &&
@@ -27,7 +27,7 @@ const PostHero = ({ post, showTypes, className }) => {
                 })}
               </div>
             }
-            <div className={s.titleWrap}><h2 className={`title ${s.title}`} title={parse(post.title)}>{parse(post.title)}</h2></div>
+            <div className={s.titleWrap}><h2 className={` ${s.title}`} title={parse(post.title)}><Link to={post.uri} itemProp="url" className="title">{parse(post.title)}</Link></h2></div>
             {!!post.seo?.metaDesc &&
               <div className={s.excerpt}>{parse(post.seo?.metaDesc)}</div>
             }
@@ -59,8 +59,8 @@ const PostHero = ({ post, showTypes, className }) => {
           } */}
 
         </div>
-        <div className={`${s.image} col-md-6 col-xl-8 py-3 p-xl-3`} style={imaegStyles}></div>
-      </Link>
+        <Link to={post.uri} itemProp="url" className={`${s.image} col-md-6 col-xl-8 py-3 p-xl-3`} style={imaegStyles}></Link>
+      </div>
     </>
   );
 };
