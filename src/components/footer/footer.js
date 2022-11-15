@@ -139,8 +139,8 @@ const Footer = () => {
                       </li>
                     </ul>
                     <div className={s.footerLinks}>
-                      <a href="https://levels.link/waitlist-international" target="_blank" className={`${s.button} btn_notusa`} title="Join Levels" data-location="external">Request Access</a>
-                      <a href="https://app.levelshealth.com/profile/login" target="_blank" className={`${s.button} ${s.noborder}`} title="Login" data-location="external">Login</a>
+                      <a href="https://levels.link/waitlist-international" target="_blank" rel="noreferrer" className={`${s.button} btn_notusa`} title="Join Levels" data-location="external">Request Access</a>
+                      <a href="https://app.levelshealth.com/profile/login" target="_blank" rel="noreferrer" className={`${s.button} ${s.noborder}`} title="Login" data-location="external">Login</a>
                     </div>
                   </div>
                 </div>
@@ -148,32 +148,32 @@ const Footer = () => {
                   <div className={s.footerLinksWrapper}>
                     <div className={s.footerLinks}>
                       <ul >
-                        <li><a href="https://support.levelshealth.com" data-location="external" target="_blank">Support</a></li>
+                        <li><a href="https://support.levelshealth.com" data-location="external" target="_blank" rel="noreferrer">Support</a></li>
                         <li>
-                          <a href="https://www.notion.so/levelshealth/Frequently-Asked-Questions-fc629e6b81c6416482c9dab8d88061c6" data-location="external" target="_blank">FAQ</a>
+                          <a href="https://www.notion.so/levelshealth/Frequently-Asked-Questions-fc629e6b81c6416482c9dab8d88061c6" data-location="external" target="_blank" rel="noreferrer">FAQ</a>
                         </li>
                         <li><Link to="/blog">Levels Blog</Link></li>
-                        <li><a href="mailto:press@levelshealth.com" data-location="external" target="_blank">Press</a></li>
-                        <li><a href="https://levels.link/careers" data-location="external" target="_blank">Careers</a></li>
-                        <li><a href="https://www.levelshealth.com/inside-the-company" data-location="external" target="_blank">Inside the Company</a></li>
-                        <li><a href="https://medium.com/levelshealth" data-location="external" target="_blank">Team Publications</a></li>
-                        <li><a href="https://www.levelshealth.com/press" data-location="external" target="_blank">Press Appearances</a></li>
-                        <li><a href="https://www.levelshealth.com/videos" data-location="external" target="_blank">Video&nbsp;Appearances</a></li>
-                        <li><a href="https://www.levelshealth.com/podcasts" data-location="external" target="_blank">Podcast Appearances</a></li>
+                        <li><a href="mailto:press@levelshealth.com" data-location="external" target="_blank" rel="noreferrer">Press</a></li>
+                        <li><a href="https://levels.link/careers" data-location="external" target="_blank" rel="noreferrer">Careers</a></li>
+                        <li><a href="https://www.levelshealth.com/inside-the-company" data-location="external" target="_blank" rel="noreferrer">Inside the Company</a></li>
+                        <li><a href="https://medium.com/levelshealth" data-location="external" target="_blank" rel="noreferrer">Team Publications</a></li>
+                        <li><a href="https://www.levelshealth.com/press" data-location="external" target="_blank" rel="noreferrer">Press Appearances</a></li>
+                        <li><a href="https://www.levelshealth.com/videos" data-location="external" target="_blank" rel="noreferrer">Video&nbsp;Appearances</a></li>
+                        <li><a href="https://www.levelshealth.com/podcasts" data-location="external" target="_blank" rel="noreferrer">Podcast Appearances</a></li>
                       </ul>
                       <ul >
-                        <li><a href="https://www.levelshealth.com/#frontpage-demo" data-location="external" target="_blank">About Levels</a></li>
-                        <li><a href="https://www.levelshealth.com/#frontpage-programs" data-location="external" target="_blank">Our Program</a></li>
-                        <li><a href="https://www.levelshealth.com/#frontpage-keypoints" data-location="external" target="_blank">User Profiles</a></li>
-                        <li><a href="https://www.levelshealth.com/#frontpage-testimonials" data-location="external" target="_blank">Testimonials</a></li>
-                        <li><a href="https://www.levelshealth.com/#frontpage-founders" data-location="external" target="_blank">Founders</a></li>
-                        <li><a href="https://www.levelshealth.com/#frontpage-medical" data-location="external" target="_blank">Advisors</a></li>
-                        <li><a href="https://www.levelshealth.com/#frontpage-access" data-location="external" target="_blank">Registration</a></li>
-                        <li><a href="https://levels.link/privacy" data-location="external" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-demo" data-location="external" target="_blank" rel="noreferrer">About Levels</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-programs" data-location="external" target="_blank" rel="noreferrer">Our Program</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-keypoints" data-location="external" target="_blank" rel="noreferrer">User Profiles</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-testimonials" data-location="external" target="_blank" rel="noreferrer">Testimonials</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-founders" data-location="external" target="_blank" rel="noreferrer">Founders</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-medical" data-location="external" target="_blank" rel="noreferrer">Advisors</a></li>
+                        <li><a href="https://www.levelshealth.com/#frontpage-access" data-location="external" target="_blank" rel="noreferrer">Registration</a></li>
+                        <li><a href="https://levels.link/privacy" data-location="external" target="_blank" rel="noreferrer">Privacy Policy</a></li>
                         <li>
-                          <a href="https://levelshealth.notion.site/Levels-Assets-for-Media-Content-Creators-January-2022-f7e9b3066e2444cfae92dc786c2f8a32" data-location="external" target="_blank">Media &amp; Creators</a>
+                          <a href="https://levelshealth.notion.site/Levels-Assets-for-Media-Content-Creators-January-2022-f7e9b3066e2444cfae92dc786c2f8a32" data-location="external" target="_blank" rel="noreferrer">Media &amp; Creators</a>
                         </li>
-                        <li><a href="https://app.levelshealth.com/profile/login" data-location="external" target="_blank">Member Login</a></li>
+                        <li><a href="https://app.levelshealth.com/profile/login" data-location="external" target="_blank" rel="noreferrer">Member Login</a></li>
                       </ul>
                     </div>
                   </div>
