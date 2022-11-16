@@ -102,6 +102,10 @@
     font-weight: 600 !important;
 }
 
+.blog-categories-wrapper .blog-categories a {
+    font-size: 15px !important;
+}
+
 .blog-categories-wrapper .more-button {
     background: #F5F5F5 0% 0% no-repeat padding-box;
     align-self: start;

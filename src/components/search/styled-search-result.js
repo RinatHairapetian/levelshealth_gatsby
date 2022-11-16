@@ -29,6 +29,8 @@ export default styled(SearchResult)`
   .HitCount {
     display: flex;
     justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 400;
   }
 
   .Hits {
@@ -55,13 +57,20 @@ export default styled(SearchResult)`
           margin-bottom: 0.2em;
           font-size: 24px;
           text-align: left;
+          span {
+            font-size: 24px;
+          }
           @media (max-width: 767.9px) {
             font-size: 20px;
+            span {
+              font-size: 20px;
+            }
           }
         }
       }
       span {
         color: ${({ theme }) => theme.foreground};
+        font-size: 16px;
       }
     }
   }
@@ -69,8 +78,9 @@ export default styled(SearchResult)`
   .ais-PoweredBy {
     display: flex;
     justify-content: flex-end;
-    font-size: 80%;
-
+    align-items: center;
+    font-size: 16px;
+    gap: 4px;
     svg {
       width: 70px;
     }

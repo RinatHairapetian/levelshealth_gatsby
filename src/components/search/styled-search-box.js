@@ -62,7 +62,7 @@ export default styled(SearchBox)`
   }
 
   .SearchIcon {
-    width: ${({ hasFocus }) => (hasFocus ? '1em' : '15px')};
+    width: 15px;
     margin: ${({ hasFocus }) => (hasFocus ? '0 0.3em 0 0' : '0')};
     color: ${({ theme, white, hasFocus }) => (white && !hasFocus) ? '#fff' : theme.foreground};
     pointer-events: none;
