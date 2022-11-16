@@ -5,7 +5,9 @@
 }
 .global-header > div:first-child {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 14px 0;
+    /* padding: 14px 0; */
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
 .header-wrapper {
@@ -71,8 +73,26 @@
     border-bottom-color: #54ECCA;
 }
 
+.header-wrapper svg {
+    max-width: 100%;
+}
+
+.search-wrapper {
+    display: flex;
+}
+
 @media screen and (max-width: 991.9px) {
-    .global-header > div:first-child {
+    /* .global-header > div:first-child {
         padding: 14px calc(var(--bs-gutter-x) * .5);
+    } */
+
+    .header-wrapper {
+        flex-direction: column;
+    }
+
+    .search-wrapper {
+        padding-top: 14px;
+        width: 100%;
+        justify-content: center;
     }
 }

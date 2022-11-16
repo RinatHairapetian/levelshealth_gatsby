@@ -69,7 +69,7 @@ const MobileNavBlog = () => {
           <Search indices={searchIndices} />
         </div>
         <div className={`${s.menuItem} mb-3`}>
-          <Link className={`${s.headerLinkBlog}`} to="/blog">METABOLIC INSIGHTS</Link>
+          <Link className={``} to="/blog">METABOLIC INSIGHTS</Link>
         </div>
       </div>
     </Menu>

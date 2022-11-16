@@ -44,7 +44,7 @@ export default styled(SearchBox)`
     padding: ${({ hasFocus }) => (hasFocus ? '2px 1px' : '0 0')};
     border-bottom: ${({ hasFocus }) => (hasFocus ? 'none' : '1px solid #d1d6d6')};
     order: ${({ hasFocus }) => (hasFocus ? '2' : '1')};
-    min-width: 250px;
+    min-width: ${({ hasFocus }) => (hasFocus ? 'unset' : '250px')};
 
     ${({ hasFocus }) => (hasFocus ? 'flex-grow: 1;' : '')};
 
@@ -55,7 +55,7 @@ export default styled(SearchBox)`
       font-size: 16px;
       line-height: 100%;
       letter-spacing: -0.02em;
-      color: #5D6465;
+      color: ${({ white, hasFocus }) => ((white && !hasFocus) ? '#fff' : '#5D6465')};
     }
     background-color: transparent;
     /*${({ hasFocus }) => (hasFocus ? open : closed)}*/
@@ -63,8 +63,8 @@ export default styled(SearchBox)`
 
   .SearchIcon {
     width: ${({ hasFocus }) => (hasFocus ? '1em' : '15px')};
-    margin: 0 0.3em 0 0;
-    color: ${({ theme }) => theme.foreground};
+    margin: ${({ hasFocus }) => (hasFocus ? '0 0.3em 0 0' : '0')};
+    color: ${({ theme, white, hasFocus }) => (white && !hasFocus) ? '#fff' : theme.foreground};
     pointer-events: none;
     order: ${({ hasFocus }) => (hasFocus ? '1' : '2')};
   }

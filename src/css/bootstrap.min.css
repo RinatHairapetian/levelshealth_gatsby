@@ -663,6 +663,17 @@ progress {
   }
 }
 
+@media screen and (min-width: 1600px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+      min-width: 1400px;
+  }
+}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;

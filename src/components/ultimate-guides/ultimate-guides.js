@@ -1,5 +1,4 @@
 import { Link } from "gatsby";
-import { GatsbyImage } from 'gatsby-plugin-image';
 import parse from "html-react-parser";
 import React from "react";
 import * as s from "./ultimate-guides.module.css";
@@ -11,14 +10,16 @@ const UltimateGuides = ({ title, posts, link }) => {
   }
   return (
     <div className={`${s.ultimateGuides} py-3`}>
-      <h2 className={`${s.title}`}>{title}</h2>
+      <div className={`${s.title}`}>
+        <h2>{title}</h2>
+      </div>
       <div className={`${s.posts}`}>
         {(firstPosts?.length > 0) &&
           firstPosts.map((post, i) => {
-            const featuredImage = {
-              data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
-              alt: post.featuredImage?.node?.altText || ``,
-            }
+            // const featuredImage = {
+            //   data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
+            //   alt: post.featuredImage?.node?.altText || ``,
+            // }
             return <div to={post.uri} key={post.uri} className={`${s.post}`}>
               <span>
                 <div className={`${s.titleWrap}`}>

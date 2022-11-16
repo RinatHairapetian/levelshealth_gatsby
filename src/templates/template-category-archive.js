@@ -57,41 +57,87 @@ const CategoryArchive = ({ data }) => {
       <HeaderBlog />
       <CategoriesBlog />
 
-      <div className="container">
+      <div className="container px-lg-0">
         <div className="row">
           <div className="col-12">
-            <h1 className="text-center mb-5">{category.name}</h1>
+            <h1 className="category-title">{category.name}</h1>
           </div>
         </div>
-        <div className="row justify-content-center mb-3" style={{ rowGap: '15px' }}>
-          <div className="col-12 col-xl-6">
+        <div className="row justify-content-center">
+          <div className="col-12 col-xl-6 py-3">
             {!!firstPost &&
-              <PostHeroCategory post={firstPost} />
+              <PostHeroCategory post={firstPost} className="lr-xl lb" />
             }
           </div>
           <div className="col-12 col-xl-6">
-            <div className="row" style={{ rowGap: '15px' }}>
+            <div className="row">
               {firstPosts?.length > 0 &&
-                firstPosts?.map((post) => {
-                  return <div className={`post-hover col-md-6 py-3`} key={post.uri} >
-                    <Post post={post} />
-                  </div>
+                firstPosts?.map((post, index) => {
+                  let view = "";
+                  switch (index) {
+                    case 0:
+                      view = <div className="col-md-6 py-3" key={post.uri} >
+                        <Post post={post} className="lr-md lb" />
+                      </div>
+                      break;
+                    case 1:
+                      view = <div className="col-md-6 py-3" key={post.uri} >
+                        <Post post={post} className="lb" />
+                      </div>
+                      break;
+                    case 2:
+                      view = <div className="col-md-6 py-3" key={post.uri} >
+                        <Post post={post} className="lr-md lb" />
+                      </div>
+                      break;
+                    case 3:
+                      view = <div className="col-md-6 py-3" key={post.uri} >
+                        <Post post={post} className="lb" />
+                      </div>
+                      break;
+                    default:
+                      break;
+                  }
+                  return view;
                 })
               }
             </div>
           </div>
         </div>
-        <div className="row justify-content-center" style={{ rowGap: '15px' }}>
+        <div className="row justify-content-center">
           {showingPosts?.length > 0 &&
             <>
-              {showingPosts.map((post) => {
-                return <div className={`post-hover col-12 col-md-6 col-xl-3 py-3`} key={post.uri} >
-                  <Post post={post} />
-                </div>
+              {showingPosts.map((post, index) => {
+                let view = "";
+                switch (index % 4) {
+                  case 0:
+                    view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
+                      <Post post={post} className="lr-md lb" />
+                    </div>
+                    break;
+                  case 1:
+                    view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
+                      <Post post={post} className="lr-xl lb" />
+                    </div>
+                    break;
+                  case 2:
+                    view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
+                      <Post post={post} className="lr-md lb" />
+                    </div>
+                    break;
+                  case 3:
+                    view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
+                      <Post post={post} className="lb" />
+                    </div>
+                    break;
+                  default:
+                    break;
+                }
+                return view;
               })}
               {showingChunkIndex + 1 < postsChunked?.length &&
                 <div className="col-12 text-center">
-                  <button className="btn btn-outline-dark" onClick={loadMore}>Load More</button>
+                  <button className="load-more" onClick={loadMore}>Load More</button>
                 </div>
               }
             </>
@@ -125,6 +171,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         author {
           node {
+            avatar {
+              url
+            }
             name
           }
         }
