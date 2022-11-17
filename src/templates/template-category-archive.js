@@ -2,6 +2,7 @@ import { graphql } from "gatsby"
 import React from "react"
 
 import CategoriesBlog from './../components/categories-blog/categories-blog'
+import CategoryBasics from './../components/category-basics/category-basics'
 import HeaderBlog from './../components/header-blog/header-blog'
 import Layout from "./../components/layout"
 import PostHeroCategory from './../components/post-hero-category/post-hero-category'
@@ -66,7 +67,7 @@ const CategoryArchive = ({ data }) => {
         <div className="row justify-content-center">
           <div className="col-12 col-xl-6 py-3">
             {!!firstPost &&
-              <PostHeroCategory post={firstPost} className="lr-xl lb" />
+              <PostHeroCategory post={firstPost} showTypes={true} className="lr-xl lb" />
             }
           </div>
           <div className="col-12 col-xl-6">
@@ -77,22 +78,22 @@ const CategoryArchive = ({ data }) => {
                   switch (index) {
                     case 0:
                       view = <div className="col-md-6 py-3" key={post.uri} >
-                        <Post post={post} className="lr-md lb" />
+                        <Post post={post} showTypes={true} className="lr-md lb" />
                       </div>
                       break;
                     case 1:
                       view = <div className="col-md-6 py-3" key={post.uri} >
-                        <Post post={post} className="lb" />
+                        <Post post={post} showTypes={true} className="lb" />
                       </div>
                       break;
                     case 2:
                       view = <div className="col-md-6 py-3" key={post.uri} >
-                        <Post post={post} className="lr-md lb" />
+                        <Post post={post} showTypes={true} className="lr-md lb" />
                       </div>
                       break;
                     case 3:
                       view = <div className="col-md-6 py-3" key={post.uri} >
-                        <Post post={post} className="lb" />
+                        <Post post={post} showTypes={true} className="lb" />
                       </div>
                       break;
                     default:
@@ -104,6 +105,9 @@ const CategoryArchive = ({ data }) => {
             </div>
           </div>
         </div>
+      </div>
+      {category.categoryFeaturedPosts?.featuredPosts?.length > 0 && <CategoryBasics title={`${category.name} Basics`} posts={category.categoryFeaturedPosts?.featuredPosts} />}
+      <div className="container px-lg-0 mb-3">
         <div className="row justify-content-center">
           {showingPosts?.length > 0 &&
             <>
@@ -112,22 +116,22 @@ const CategoryArchive = ({ data }) => {
                 switch (index % 4) {
                   case 0:
                     view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
-                      <Post post={post} className="lr-md lb" />
+                      <Post post={post} showTypes={true} className="lr-md lb" />
                     </div>
                     break;
                   case 1:
                     view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
-                      <Post post={post} className="lr-xl lb" />
+                      <Post post={post} showTypes={true} className="lr-xl lb" />
                     </div>
                     break;
                   case 2:
                     view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
-                      <Post post={post} className="lr-md lb" />
+                      <Post post={post} showTypes={true} className="lr-md lb" />
                     </div>
                     break;
                   case 3:
                     view = <div className="col-12 col-md-6 col-xl-3 py-3" key={post.uri} >
-                      <Post post={post} className="lb" />
+                      <Post post={post} showTypes={true} className="lb" />
                     </div>
                     break;
                   default:
@@ -160,6 +164,55 @@ export const pageQuery = graphql`
       description
       seo {
         metaDesc
+      }
+      categoryFeaturedPosts {
+        featuredPosts {
+          ... on WpPost {
+            uri
+            date(formatString: "MMMM DD, YYYY")
+            author {
+              node {
+                avatar {
+                  url
+                }
+                name
+              }
+            }
+            blogSingle {
+              readingTime
+            }
+            title
+            excerpt
+            seo {
+              metaDesc
+            }
+            categories {
+              nodes {
+                name
+              }
+            }
+            types {
+              nodes {
+                name
+              }
+            }
+            tags {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                altText
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     allWpPost(

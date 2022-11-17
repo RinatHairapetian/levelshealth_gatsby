@@ -7,10 +7,9 @@
     text-align: left;
     font-family: 'TT Hoves', sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 35px;
-    letter-spacing: 0.6px;
+    font-weight: 400;
+    font-size: .8em!important;
+    line-height: 1.125;
     color: #FFFFFF;
     margin: 0;
 }
