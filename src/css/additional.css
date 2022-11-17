@@ -277,6 +277,10 @@ img.aligncenter {
     }
 }
 
+.row > div:last-child > .lr-xl::before {
+    content: unset;
+}
+
 
 /*============SLICK============*/
 
